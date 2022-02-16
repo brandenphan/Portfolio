@@ -16,8 +16,20 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import profile from "../images/profile2.png";
 import NavBar from "../components/NavBar";
 
+export default function Index() {
+    const [width, setWindowWidth] = React.useState(0);
+    const updateDimensions = () => {
+        setWindowWidth(window.innerWidth);
+    };
 
-export default function index() {
+    React.useEffect(() => {
+        updateDimensions();
+        window.addEventListener("resize", updateDimensions);
+        return () => {
+            window.removeEventListener("resize", updateDimensions);
+        };
+    }, []);
+
     return (
         <div
             style={{
@@ -31,38 +43,141 @@ export default function index() {
             <div style={{height: "92vh"}}>
                 <NavBar />
 
-                <Grid container>
-                    <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
-                    <Grid item xs={5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <div style={{padding: "10%", marginTop: "-4%"}}>
-                            <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                            <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                            <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
-                            <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
-                                <Grid item>
-                                    <Tooltip title="Github">
-                                        <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
-                                            <GitHubIcon style={{fontSize: "35px", color: "#3672FF"}} />
-                                        </StyledAnchor>
-                                    </Tooltip>
+                {width > 1600 && (
+                    <Grid container>
+                        <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
+                        <Grid item xs={5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{padding: "10%", marginTop: "-4%"}}>
+                                <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
+                                    <Grid item>
+                                        <Tooltip title="Github">
+                                            <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                <GitHubIcon style={{fontSize: "35px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                    <Grid item>
+                                        <Tooltip title="LinkedIn">
+                                            <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-2%"}}>
+                                                <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
                                 </Grid>
-                                <Grid item>
-                                    <Tooltip title="LinkedIn">
-                                        <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-2%"}}>
-                                            <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
-                                        </StyledAnchor>
-                                    </Tooltip>
+                            </div>
+                        </Grid>
+                        <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{marginTop: "-4%"}}>
+                                <img src={profile} alt="ProfilePicture" />
+                            </div>
+                        </Grid>
+                        <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
+                    </Grid>
+                )}
+
+                {width <= 1600 && width > 1200 && (
+                    <Grid container>
+                        <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
+                        <Grid item xs={5.5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{padding: "10%", marginTop: "-4%"}}>
+                                <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
+                                    <Grid item>
+                                        <Tooltip title="Github">
+                                            <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                <GitHubIcon style={{fontSize: "35px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                    <Grid item>
+                                        <Tooltip title="LinkedIn">
+                                            <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-2%"}}>
+                                                <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </div>
+                            </div>
+                        </Grid>
+                        <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
+                        <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{marginTop: "-4%"}}>
+                                <img src={profile} alt="ProfilePicture" />
+                            </div>
+                        </Grid>
+                        <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
                     </Grid>
-                    <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <div style={{marginTop: "-4%"}}>
-                            <img src={profile} alt="ProfilePicture" />
-                        </div>
+                )}
+
+                {width <= 1200 && width > 1000 && (
+                    <Grid container>
+                        <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
+                        <Grid item xs={6} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{padding: "10%", marginTop: "-4%"}}>
+                                <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
+                                <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
+                                    <Grid item>
+                                        <Tooltip title="Github">
+                                            <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                <GitHubIcon style={{fontSize: "35px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                    <Grid item>
+                                        <Tooltip title="LinkedIn">
+                                            <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-2%"}}>
+                                                <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </Grid>
+                        <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
+                        <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{marginTop: "-4%"}}>
+                                <img src={profile} alt="ProfilePicture" />
+                            </div>
+                        </Grid>
+                        <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
                     </Grid>
-                    <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
-                </Grid>
+                )}
+
+                {width <= 1000 && (
+                    <Grid container>
+                        <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <div style={{padding: "10%", marginTop: "-4%"}}>
+                                <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
+                                <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>Software Developer</b></Typography>
+                                <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                <Grid container justifyContent="center" spacing={2} sx={{marginTop: "6%"}}>
+                                    <Grid item>
+                                        <Tooltip title="Github">
+                                            <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                <GitHubIcon style={{fontSize: "33px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                    <Grid item>
+                                        <Tooltip title="LinkedIn">
+                                            <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-2%"}}>
+                                                <LinkedInIcon style={{fontSize: "40px", color: "#3672FF"}} />
+                                            </StyledAnchor>
+                                        </Tooltip>
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </Grid>
+                    </Grid>
+                )}
+
             </div>
 
             <div style={{height: "8vh"}}>

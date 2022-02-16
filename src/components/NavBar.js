@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Toolbar, AppBar, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import LightModeIcon from '@mui/icons-material/LightMode';
+import {useLocation} from "@reach/router";
 
 export default function NavBar() {
     const [width, setWindowWidth] = React.useState(0);
@@ -17,9 +18,12 @@ export default function NavBar() {
         };
     }, []);
 
+    const location = useLocation();
+    console.log(location);
+
     return (
         <>
-            {width > 1200 && (
+            {width > 1400 && (
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
@@ -29,7 +33,7 @@ export default function NavBar() {
                                 </IconButton>
                             </div>
 
-                            <div style={{width: "68%", display: "flex", justifyContent: "flex-end"}}>
+                            <div style={{width: "75%", display: "flex", justifyContent: "flex-end"}}>
                                 <ButtonComponent navigate="/" buttonName="About" />
                                 <ButtonComponent navigate="/Education" buttonName="Education" />
                                 <ButtonComponent navigate="/Projects" buttonName="Projects" />
@@ -40,7 +44,7 @@ export default function NavBar() {
                 </Box>
             )}
 
-            {width <= 1200 && width > 1000 && (
+            {width <= 1400 && width > 1000 && (
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
@@ -61,7 +65,28 @@ export default function NavBar() {
                 </Box>
             )}
 
-            {width <= 1000 && (<MenuComponent />)}
+            {width <= 1000 && width > 700 && (
+                <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
+                    <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
+                        <Toolbar>
+                            <div style={{marginLeft: "6%"}}>
+                                <IconButton sx={{"&:hover": {color: "black"}}}>
+                                    <LightModeIcon />
+                                </IconButton>
+                            </div>
+
+                            <div style={{width: "86%", display: "flex", justifyContent: "flex-end"}}>
+                                <ButtonComponent navigate="/" buttonName="About" />
+                                <ButtonComponent navigate="/Education" buttonName="Education" />
+                                <ButtonComponent navigate="/Projects" buttonName="Projects" />
+                                <ButtonComponent navigate="/Work" buttonName="Work" />
+                            </div>
+                        </Toolbar>
+                    </AppBar>
+                </Box>
+            )}
+
+            {width <= 700 && (<MenuComponent />)}
         </>
 
     )
