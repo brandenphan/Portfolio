@@ -18,8 +18,6 @@ export default function NavBar() {
         };
     }, []);
 
-    const location = useLocation();
-    console.log(location);
 
     return (
         <>
@@ -93,17 +91,21 @@ export default function NavBar() {
 }
 
 const ButtonComponent = ({navigate, buttonName}) => {
+    const location = useLocation();
+    const currentLocation = location.pathname.toLowerCase();
+ 
     let active = false;
     if (navigate === '/') {
-        if (window.location.pathname === navigate) {
+        if (currentLocation === navigate.toLowerCase()) {
             active = true;
         }
     }
     else {
-        if (window.location.href.includes(navigate)) {
+        if (currentLocation.includes(navigate.toLowerCase())) {
             active = true;
         }
     }
+
 
     return (
         <>
@@ -112,7 +114,7 @@ const ButtonComponent = ({navigate, buttonName}) => {
                     <b>{buttonName}</b>
                 </Button>
             ) : (
-                <Button sx={[{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}]}>
+                <Button href="/education" rel="noreferrer" sx={[{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}]}>
                     <b>{buttonName}</b>
                 </Button>
             )}
