@@ -18,7 +18,7 @@ export default function NavBar() {
             window.removeEventListener("resize", updateDimensions);
         };
     }, []);
-
+    
     return (
         <>
             {width > 1400 && (
@@ -31,7 +31,7 @@ export default function NavBar() {
                                 </IconButton>
                             </div>
 
-                            <div style={{width: "75%", display: "flex", justifyContent: "flex-end"}}>
+                            <div style={{width: "70%", display: "flex", justifyContent: "flex-end"}}>
                                 <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
                                 <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
                                 <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
@@ -193,7 +193,7 @@ const MenuComponent = ({navigateFunction}) => {
                                 onClick={() => {navigateFunction('/work')}}
                             />
                         </Menu>
-                    </Toolbar>  
+                    </Toolbar>
                 </AppBar>
             </Box>
         </>
