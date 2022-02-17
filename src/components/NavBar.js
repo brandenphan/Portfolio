@@ -193,7 +193,7 @@ const MenuComponent = ({navigateFunction}) => {
                                 onClick={() => {navigateFunction('/work')}}
                             />
                         </Menu>
-                    </Toolbar>
+                    </Toolbar>  
                 </AppBar>
             </Box>
         </>

@@ -15,6 +15,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 // import test4 from "../images/test14.jpg";
 import profile from "../images/profile2.png";
 import NavBar from "../components/NavBar";
+import Layout from "../components/Layout";
 
 export default function Index() {
     const [width, setWindowWidth] = React.useState(0);
@@ -33,15 +34,7 @@ export default function Index() {
     }, []);
 
     return (
-        <div
-            style={{
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "100%",
-                overflow: "hidden",
-            }}
-        >
+        <Layout>
             <div style={{height: "85vh"}}>
                 <NavBar />
 
@@ -51,7 +44,7 @@ export default function Index() {
                             <Grid container>
                                 <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
                                 <Grid item xs={5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                    <div style={{padding: "10%", marginTop: "-4%"}}>
+                                    <div style={{padding: "10%", marginTop: "-5%"}}>
                                         <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
@@ -74,7 +67,7 @@ export default function Index() {
                                     </div>
                                 </Grid>
                                 <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                    <div style={{marginTop: "-4%"}}>
+                                    <div style={{marginTop: "-5%"}}>
                                         <img src={profile} alt="ProfilePicture" />
                                     </div>
                                 </Grid>
@@ -374,8 +367,8 @@ export default function Index() {
 
             {height > 600 && (
                 <div>
-                    <div style={{height: "5vh"}} />
-                    <div style={{height: "10vh"}}>
+                    <div style={{height: "6vh"}} />
+                    <div style={{height: "9vh"}}>
                         <Grid container>
                             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                                 <div>
@@ -418,7 +411,7 @@ export default function Index() {
                     </div>
                 </div>       
             )}
-        </div>
+        </Layout>
     );
 }
 
