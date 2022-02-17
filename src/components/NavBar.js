@@ -3,6 +3,7 @@ import { Box, Toolbar, AppBar, Button, IconButton, Menu, MenuItem } from "@mui/m
 import MenuIcon from "@mui/icons-material/Menu";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import {useLocation} from "@reach/router";
+import { navigate } from "gatsby";
 
 export default function NavBar() {
     const [width, setWindowWidth] = React.useState(0);
@@ -18,7 +19,6 @@ export default function NavBar() {
         };
     }, []);
 
-
     return (
         <>
             {width > 1400 && (
@@ -32,10 +32,10 @@ export default function NavBar() {
                             </div>
 
                             <div style={{width: "75%", display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent navigate="/" buttonName="About" />
-                                <ButtonComponent navigate="/Education" buttonName="Education" />
-                                <ButtonComponent navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent navigate="/Work" buttonName="Work" />
+                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
+                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
+                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
+                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
                             </div>
                         </Toolbar>
                     </AppBar>
@@ -53,10 +53,10 @@ export default function NavBar() {
                             </div>
 
                             <div style={{width: "80%", display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent navigate="/" buttonName="About" />
-                                <ButtonComponent navigate="/Education" buttonName="Education" />
-                                <ButtonComponent navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent navigate="/Work" buttonName="Work" />
+                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
+                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
+                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
+                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
                             </div>
                         </Toolbar>
                     </AppBar>
@@ -74,26 +74,26 @@ export default function NavBar() {
                             </div>
 
                             <div style={{width: "86%", display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent navigate="/" buttonName="About" />
-                                <ButtonComponent navigate="/Education" buttonName="Education" />
-                                <ButtonComponent navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent navigate="/Work" buttonName="Work" />
+                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
+                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
+                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
+                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
                             </div>
                         </Toolbar>
                     </AppBar>
                 </Box>
             )}
 
-            {width <= 700 && (<MenuComponent />)}
+            {width <= 700 && (<MenuComponent navigateFunction={(navigateUrl) => {navigate(navigateUrl)}} />)}
         </>
 
     )
 }
 
-const ButtonComponent = ({navigate, buttonName}) => {
+const ButtonComponent = ({navigate, buttonName, onClick}) => {
     const location = useLocation();
     const currentLocation = location.pathname.toLowerCase();
- 
+
     let active = false;
     if (navigate === '/') {
         if (currentLocation === navigate.toLowerCase()) {
@@ -106,7 +106,6 @@ const ButtonComponent = ({navigate, buttonName}) => {
         }
     }
 
-
     return (
         <>
             {active ? (
@@ -114,7 +113,7 @@ const ButtonComponent = ({navigate, buttonName}) => {
                     <b>{buttonName}</b>
                 </Button>
             ) : (
-                <Button href="/education" rel="noreferrer" sx={[{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}]}>
+                <Button onClick={onClick} sx={[{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}]}>
                     <b>{buttonName}</b>
                 </Button>
             )}
@@ -122,7 +121,7 @@ const ButtonComponent = ({navigate, buttonName}) => {
     )
 }
 
-const MenuComponent = () => {
+const MenuComponent = ({navigateFunction}) => {
     const [menuElement, setMenuElement] = React.useState(null);
     const open = Boolean(menuElement);
 
@@ -173,21 +172,25 @@ const MenuComponent = () => {
                             <MenuItemComponent
                                 menuName="About"
                                 navigate="/"
+                                onClick={() => {navigateFunction('/')}}
                             />
 
                             <MenuItemComponent
                                 menuName="Education"
                                 navigate="/Education"
+                                onClick={() => {navigateFunction('/education')}}
                             />
 
                             <MenuItemComponent
                                 menuName="Projects"
                                 navigate="/Projects"
+                                onClick={() => {navigateFunction('/projects')}}
                             />
 
                             <MenuItemComponent
                                 menuName="Work"
                                 navigate="/Work"
+                                onClick={() => {navigateFunction('/work')}}
                             />
                         </Menu>
                     </Toolbar>
@@ -197,14 +200,17 @@ const MenuComponent = () => {
     );
 };
 
-const MenuItemComponent = (props) => {
+const MenuItemComponent = ({navigate, menuName, onClick}) => {
+    const location = useLocation();
+    const currentLocation = location.pathname.toLowerCase();
+
     let active = false;
-    if (props.navigate === "/") {
-        if (window.location.pathname === props.navigate) {
+    if (navigate === "/") {
+        if (currentLocation === navigate.toLowerCase()) {
             active = true;
         }
     } else {
-        if (window.location.href.includes(props.navigate)) {
+        if (currentLocation.includes(navigate.toLowerCase())) {
             active = true;
         }
     }
@@ -219,7 +225,7 @@ const MenuItemComponent = (props) => {
                         fontSize: "20px",
                     }}
                 >
-                    {props.menuName}
+                    {menuName}
                 </MenuItem>
             ) : (
                 <MenuItem
@@ -227,8 +233,9 @@ const MenuItemComponent = (props) => {
                         fontFamily: "Source Sans Pro",
                         fontSize: "20px",
                     }}
+                    onClick={onClick}
                 >
-                    {props.menuName}
+                    {menuName}
                 </MenuItem>
             )}
         </>
