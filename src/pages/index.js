@@ -42,8 +42,8 @@ export default function Index() {
                     <>
                         {height > 600 && (
                             <Grid container>
-                                <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
-                                <Grid item xs={5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={1.5} />
+                                <Grid item xs={5} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-5%"}}>
                                         <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -66,18 +66,18 @@ export default function Index() {
                                         </Grid>
                                     </div>
                                 </Grid>
-                                <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={4} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{marginTop: "-5%"}}>
                                         <img src={profile} alt="ProfilePicture" />
                                     </div>
                                 </Grid>
-                                <Grid item xs={1.5} sx={{backgroundColor: "#EDF2FB"}} />
+                                <Grid item xs={1.5} />
                             </Grid>
                         )}
 
                         {height <= 600 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%"}}>
                                         <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -109,8 +109,8 @@ export default function Index() {
                     <>
                         {height > 600 && (
                             <Grid container>
-                                <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
-                                <Grid item xs={5.5} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={1} />
+                                <Grid item xs={5.5} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-4%"}}>
                                         <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -133,19 +133,19 @@ export default function Index() {
                                         </Grid>
                                     </div>
                                 </Grid>
-                                <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
-                                <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={0.5}/>
+                                <Grid item xs={4} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{marginTop: "-4%"}}>
                                         <img src={profile} alt="ProfilePicture" />
                                     </div>
                                 </Grid>
-                                <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
+                                <Grid item xs={1} />
                             </Grid>
                         )}
 
                         {height <= 600 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "1%"}}>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -177,8 +177,8 @@ export default function Index() {
                     <>
                         {height > 600 && (
                             <Grid container>
-                                <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
-                                <Grid item xs={6} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={0.5} />
+                                <Grid item xs={6} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-4%"}}>
                                         <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -201,19 +201,19 @@ export default function Index() {
                                         </Grid>
                                     </div>
                                 </Grid>
-                                <Grid item xs={1} sx={{backgroundColor: "#EDF2FB"}} />
-                                <Grid item xs={4} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={1}/>
+                                <Grid item xs={4} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{marginTop: "-4%"}}>
                                         <img src={profile} alt="ProfilePicture" />
                                     </div>
                                 </Grid>
-                                <Grid item xs={0.5} sx={{backgroundColor: "#EDF2FB"}} />
+                                <Grid item xs={0.5}/>
                             </Grid>
                         )}
 
                         {height <= 600 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%"}}>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -245,7 +245,7 @@ export default function Index() {
                     <>
                         {height > 500 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-4%"}}>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>Software Developer</b></Typography>
@@ -273,7 +273,7 @@ export default function Index() {
 
                         {height <= 500 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-1%"}}>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
@@ -305,7 +305,7 @@ export default function Index() {
                     <>
                         {height > 500 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-4%"}}>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
                                         <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}><b>Branden Phan</b></Typography>
@@ -334,7 +334,7 @@ export default function Index() {
 
                         {height <= 500 && (
                             <Grid container>
-                                <Grid item xs={12} sx={{backgroundColor: "#EDF2FB", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-1%"}}>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
                                         <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "1%"}}><b>Branden Phan</b></Typography>

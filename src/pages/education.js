@@ -1,12 +1,13 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
+import Layout from '../components/Layout'
 
 export default function Education() {
     return (
-        <div style={{position: "absolute", top: "0", left: "0", width: "100%", overflow: "hidden"}}>
-			<div style={{height: "100vh"}}>
-				<NavBar />
-			</div>
-        </div>
+        <Layout>
+            <div style={{height: "100vh"}}>
+                <NavBar />
+            </div>
+        </Layout>
     )
 }
