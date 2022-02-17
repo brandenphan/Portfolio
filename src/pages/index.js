@@ -247,7 +247,8 @@ export default function Index() {
                             <Grid container>
                                 <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                     <div style={{padding: "10%", marginTop: "-4%"}}>
-                                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
+                                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
+                                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Branden Phan</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>Software Developer</b></Typography>
                                         <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>A 3rd year computer science student at the University of Guelph</Typography>
                                         <Grid container justifyContent="center" spacing={2} sx={{marginTop: "6%"}}>
