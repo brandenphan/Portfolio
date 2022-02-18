@@ -190,7 +190,19 @@ export default function Education() {
                     </Grid>
 
 
-                    <Grid item xs={12} sx={{height: "100vh"}} />
+                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                        <div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">Designed by Branden Phan</Typography>
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">Copyright © 2022 - All Rights Reserved.</Typography>
+                            <br />
+                            <br />
+                        </div>
+                    </Grid>
 
                 </Grid>
             </div>
