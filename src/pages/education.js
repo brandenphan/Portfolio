@@ -26,6 +26,18 @@ import mocha from "../images/mocha.svg"
 
 
 export default function Education() {
+    const [width, setWindowWidth] = React.useState(0);
+    const updateDimensions = () => {
+        setWindowWidth(window.innerWidth);
+    }
+
+    React.useEffect(() => {
+        updateDimensions();
+        window.addEventListener("resize", updateDimensions);
+        return () => {
+            window.removeEventListener("resize", updateDimensions);
+        };
+    }, []);
 
     return (
         <Layout>
@@ -35,21 +47,18 @@ export default function Education() {
                 <Grid container>
                     <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>
 
-                    <Grid item xs={3} />
-                    <Grid item xs={2.25}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF"}} />
-                    </Grid>
-                    <Grid item xs={1.5} sx={{display: "flex", justifyContent: "center"}}>
-                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
-                    </Grid>
-                    <Grid item xs={2.25}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF  "}} />    
-                    </Grid>
-                    <Grid item xs={3} />
+                    {width > 1600 && <EducationComponent outerLength={3} lineLength={2.25} innerLength={1.5} />}
+                    {width <= 1600 && width > 1300 && <EducationComponent outerLength={3} lineLength={2} innerLength={2} />}
+                    {width <= 1300 && width > 900 && <EducationComponent outerLength={2} lineLength={2.75} innerLength={2.5} />}
+                    {width <= 900 && width > 600 && <EducationComponent outerLength={1.5} lineLength={2.75} innerLength={3.5} />}
+                    {width <= 600 && width > 500 && <EducationComponent outerLength={1} lineLength={2.75} innerLength={4.5} />}
+                    {width <= 500 && <EducationComponent outerLength={1} lineLength={2} innerLength={6} />}
+
+ 
 
 
+
+                    
 
                     <Grid item xs={12}><br /><br /></Grid>
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
@@ -79,7 +88,6 @@ export default function Education() {
                     </Grid>
                     <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
 
-
                     <Grid item xs={3} />
                     <Grid item xs={2.5}>
                         <br />
@@ -97,34 +105,27 @@ export default function Education() {
                     </Grid>
                     <Grid item xs={3} />
 
-
                     <Grid item xs={12} sx={{marginTop: "1%"}}>
                         <Grid container>
                             <Grid item xs={3} />
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={html} alt="HTMLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={css} alt="CSSLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={javascript} alt="JavaScriptLogo" name="JavaScript" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={reactImage} alt="ReactLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={gatsbyImage} alt="GatsbyLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;Gatsby&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={graphql} alt="GraphQLLogo" name="&nbsp;&nbsp;GraphQL&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={3} />
                         </Grid>
                     </Grid>
@@ -135,23 +136,18 @@ export default function Education() {
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={node} alt="NodeLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={express} alt="ExpressLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;Express&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={mysql} alt="MySQLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MySQL&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={firebase} alt="FirebaseLogo" name="&nbsp;&nbsp;&nbsp;Firebase&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={mongo} alt="MongoLogo" name="&nbsp;&nbsp;MongoDB&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={git} alt="GitLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Git&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
@@ -165,30 +161,24 @@ export default function Education() {
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={cLanguage} alt="CLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={java} alt="JavaLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={python} alt="PythonLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={linux} alt="LinuxLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={docker} alt="DockerLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
-
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={mocha} alt="MochaLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mocha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
                             </Grid>
                             <Grid item xs={3} />
                         </Grid>
                     </Grid>
-
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
@@ -210,13 +200,7 @@ export default function Education() {
     )
 }
 
-// const StyledAnchor = styled.a`
-//     text-decoration: none;
-//     &: hover {
-//         color: #3672FF;
-//         text-decoration: underline;
-//     }
-// `;
+
 
 const SkillComponent = ({src, alt, name}) => (
     <StyledDiv>
@@ -224,6 +208,25 @@ const SkillComponent = ({src, alt, name}) => (
         <Typography variant="subtitle1" align="center" sx={{fontFamily: "Source Sans Pro"}}>{name}</Typography>
     </StyledDiv>
 )
+
+const EducationComponent = ({outerLength, lineLength, innerLength}) => (
+    <>
+        <Grid item xs={outerLength} />
+        <Grid item xs={lineLength}>
+            <br />
+            <hr style={{border: "1px solid #3672FF"}} />
+        </Grid>
+        <Grid item xs={innerLength} sx={{display: "flex", justifyContent: "center"}}>
+            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
+        </Grid>
+        <Grid item xs={lineLength}>
+            <br />
+            <hr style={{border: "1px solid #3672FF  "}} />    
+        </Grid>
+        <Grid item xs={outerLength} />    
+    </>
+)
+
 
 const StyledDiv = styled.div`
     transition: transform .2s;

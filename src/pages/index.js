@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { Grid, Typography, Tooltip } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 // import LightModeIcon from '@mui/icons-material/LightMode';
 // import test from "../images/test.jpg";
 // import test2 from "../images/test7.png";
@@ -63,6 +64,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -97,6 +105,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -127,6 +142,13 @@ export default function Index() {
                                                 <Tooltip title="LinkedIn">
                                                     <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
                                                         <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
@@ -165,6 +187,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -195,6 +224,13 @@ export default function Index() {
                                                 <Tooltip title="LinkedIn">
                                                     <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
                                                         <LinkedInIcon style={{fontSize: "42px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
@@ -233,6 +269,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -266,6 +309,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -291,6 +341,13 @@ export default function Index() {
                                                 <Tooltip title="LinkedIn">
                                                     <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
                                                         <LinkedInIcon style={{fontSize: "40px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
@@ -327,6 +384,13 @@ export default function Index() {
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
                                     </div>
                                 </Grid>
@@ -353,6 +417,13 @@ export default function Index() {
                                                 <Tooltip title="LinkedIn">
                                                     <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
                                                         <LinkedInIcon style={{fontSize: "40px", color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
+                                            </Grid>
+                                            <Grid item>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: "45px", color: "#3672FF"}} />
                                                     </StyledAnchor>
                                                 </Tooltip>
                                             </Grid>
