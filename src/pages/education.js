@@ -150,7 +150,13 @@ export default function Education() {
     )
 }
 
-
+const StyledDiv = styled.div`
+    display: block;
+    transition: transform .2s;
+    &:hover {
+        transform: scale(1.4);
+    }
+`
 
 const SkillComponent = ({src, alt, name}) => (
     <StyledDiv>
@@ -158,13 +164,3 @@ const SkillComponent = ({src, alt, name}) => (
         <Typography variant="subtitle1" align="center" sx={{fontFamily: "Source Sans Pro"}}>{name}</Typography>
     </StyledDiv>
 )
-
-
-
-
-const StyledDiv = styled.div`
-    display: block;
-    &:hover {
-        transform: scale(1.2);
-    }
-`
