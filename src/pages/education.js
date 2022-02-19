@@ -164,7 +164,6 @@ const SkillComponent = ({src, alt, name}) => (
 
 const StyledDiv = styled.div`
     display: block;
-    // transition: transform .2s;
     &:hover {
         transform: scale(1.2);
     }
