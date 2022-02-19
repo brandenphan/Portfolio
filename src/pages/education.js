@@ -152,9 +152,9 @@ export default function Education() {
 
 const StyledDiv = styled.div`
     display: block;
-    transition: transform .2s;
+    // transition: transform .2s;
     &:hover {
-        transform: scale(1.4);
+        transform: perspective(700px) translateZ(25px);
     }
 `
 
