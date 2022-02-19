@@ -2,6 +2,8 @@ import React from "react";
 import { Grid, Typography } from "@mui/material";
 import { useWindow } from "../../context/WindowContext";
 import guelph from "../../images/guelph2.png";
+import "@fontsource/source-sans-pro";
+
 
 export default function EducationBox() {
     const {width} = useWindow();

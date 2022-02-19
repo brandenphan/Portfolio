@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 import { useWindow } from "../../context/WindowContext"; 
+import "@fontsource/source-sans-pro";
 
 export default function SkillHeader() {
     const {width} = useWindow();
