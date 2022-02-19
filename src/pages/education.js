@@ -8,8 +8,6 @@ import SkillHeader from '../components/EducationComponents/SkillHeader';
 import "@fontsource/source-sans-pro";
 import Skills from '../components/EducationComponents/Skills';
 
-
-
 export default function Education() {
     const [width, setWindowWidth] = React.useState(0);
     const updateDimensions = () => {
@@ -34,29 +32,17 @@ export default function Education() {
                     {width > 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>}
                     {width <= 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>}
                     
-
                     <EducationHeader />
 
- 
                     <Grid item xs={12}><br /><br /></Grid>
 
                     <EducationBox />
-
-    
-
-
 
                     <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
 
                     <SkillHeader />
 
                     <Skills />
-
-
-
-
-
-
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
