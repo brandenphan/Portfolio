@@ -161,8 +161,8 @@ const StyledDiv = styled.div`
 `
 
 const SkillComponent = ({src, alt, name}) => (
-    <StyledDiv style={{width: "50%"}}>
-        <Grid container>
+    <StyledDiv>
+        <Grid container style={{width: "50%"}}>
             <Grid item xs={12}>
                 <img src={src} alt={alt} height="100%" width="100%" />
             </Grid>
