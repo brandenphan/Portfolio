@@ -30,6 +30,7 @@ import "@fontsource/source-sans-pro";
 
 export default function Education() {
 
+
     return (
         <Layout>
             <div>
@@ -59,47 +60,22 @@ export default function Education() {
                         <Grid container>
                             <Grid item xs={3} />
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={html} alt="HTMLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={html} alt="HTMLLogo" name="HTML" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={css} alt="CSSLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={css} alt="CSSLogo" name="CSS" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={javascript} alt="JavaScriptLogo" name="JavaScript" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={reactImage} alt="ReactLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={reactImage} alt="ReactLogo" name="React" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={gatsbyImage} alt="GatsbyLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;Gatsby&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={gatsbyImage} alt="GatsbyLogo" name="Gatsby" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={graphql} alt="GraphQLLogo" name="&nbsp;&nbsp;GraphQL&nbsp;&nbsp;" />
-                            </Grid>
-                            <Grid item xs={3} />
-                        </Grid>
-                    </Grid>
-
-                    <Grid item xs={12} sx={{marginTop: "2%"}}>
-                        <Grid container>
-                            <Grid item xs={3} />
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={node} alt="NodeLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Node&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
-                            </Grid>
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={express} alt="ExpressLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;Express&nbsp;&nbsp;&nbsp;&nbsp;" />
-                            </Grid>
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={mysql} alt="MySQLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MySQL&nbsp;&nbsp;&nbsp;&nbsp;" />
-                            </Grid>
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={firebase} alt="FirebaseLogo" name="&nbsp;&nbsp;&nbsp;Firebase&nbsp;&nbsp;&nbsp;" />
-                            </Grid>
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={mongo} alt="MongoLogo" name="&nbsp;&nbsp;MongoDB&nbsp;" />
-                            </Grid>
-                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={git} alt="GitLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Git&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={graphql} alt="GraphQLLogo" name="GraphQL" />
                             </Grid>
                             <Grid item xs={3} />
                         </Grid>
@@ -109,22 +85,47 @@ export default function Education() {
                         <Grid container>
                             <Grid item xs={3} />
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={cLanguage} alt="CLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={node} alt="NodeLogo" name="Node" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={java} alt="JavaLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={express} alt="ExpressLogo" name="Express" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={python} alt="PythonLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={mysql} alt="MySQLLogo" name="MySQL" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={linux} alt="LinuxLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linux&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={firebase} alt="FirebaseLogo" name="Firebase" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={docker} alt="DockerLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={mongo} alt="MongoLogo" name="MongoDB" />
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={mocha} alt="MochaLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mocha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                <SkillComponent src={git} alt="GitLogo" name="Git" />
+                            </Grid>
+                            <Grid item xs={3} />
+                        </Grid>
+                    </Grid>
+
+                    <Grid item xs={12} sx={{marginTop: "2%"}}>
+                        <Grid container>
+                            <Grid item xs={3} />
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={cLanguage} alt="CLogo" name="C" />
+                            </Grid>
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={java} alt="JavaLogo" name="Java" />
+                            </Grid>
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={python} alt="PythonLogo" name="Python" />
+                            </Grid>
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={linux} alt="LinuxLogo" name="Linux" />
+                            </Grid>
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={docker} alt="DockerLogo" name="Docker" />
+                            </Grid>
+                            <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
+                                <SkillComponent src={mocha} alt="MochaLogo" name="Mocha" />
                             </Grid>
                             <Grid item xs={3} />
                         </Grid>
@@ -151,7 +152,8 @@ export default function Education() {
 }
 
 const StyledDiv = styled.div`
-    display: block;
+    display: flex;
+    justify-content: center;
     transition: transform .2s;
     &:hover {
         transform: scale(1.4);
@@ -159,8 +161,14 @@ const StyledDiv = styled.div`
 `
 
 const SkillComponent = ({src, alt, name}) => (
-    <StyledDiv>
-        <img src={src} alt={alt} />
-        <Typography variant="subtitle1" align="center" sx={{fontFamily: "Source Sans Pro"}}>{name}</Typography>
+    <StyledDiv style={{width: "50%"}}>
+        <Grid container>
+            <Grid item xs={12}>
+                <img src={src} alt={alt} height="100%" width="100%" />
+            </Grid>
+            <Grid item xs={12}>
+                <Typography variant="subtitle1" align="center" sx={{fontFamily: "Source Sans Pro"}}>{name}</Typography>
+            </Grid>
+        </Grid>
     </StyledDiv>
 )
