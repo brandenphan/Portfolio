@@ -27,6 +27,18 @@ import SkillHeader from '../components/EducationComponents/SkillHeader';
 
 
 export default function Education() {
+    // const [width, setWindowWidth] = React.useState(0);
+    // const updateDimensions = () => {
+    //     setWindowWidth(window.innerWidth);
+    // }
+
+    // React.useEffect(() => {
+    //     updateDimensions();
+    //     window.addEventListener("resize", updateDimensions);
+    //     return () => {
+    //         window.removeEventListener("resize", updateDimensions);
+    //     };
+    // }, []);
 
     return (
         <Layout>

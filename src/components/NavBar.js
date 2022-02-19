@@ -7,7 +7,7 @@ import { navigate } from "gatsby";
 import { useWindow } from "../context/WindowContext";
 
 export default function NavBar() {
-    const {width} = useWindow();
+    const { width } = useWindow();
     
     return (
         <>
