@@ -24,6 +24,8 @@ import mocha from "../images/mocha.svg"
 import EducationHeader from '../components/EducationComponents/EducationHeader';
 import EducationBox from '../components/EducationComponents/EducationBox';
 import SkillHeader from '../components/EducationComponents/SkillHeader';
+import "@fontsource/source-sans-pro";
+
 
 
 export default function Education() {
@@ -57,7 +59,11 @@ export default function Education() {
                         <Grid container>
                             <Grid item xs={3} />
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                                <SkillComponent src={html} alt="HTMLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+                                {/* <SkillComponent src={html} alt="HTMLLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" /> */}
+                                <StyledDiv>
+        <img src={html} alt="HTMLLOGO" />
+        <Typography variant="subtitle1" align="center" sx={{fontFamily: "Source Sans Pro"}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
+    </StyledDiv>
                             </Grid>
                             <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
                                 <SkillComponent src={css} alt="CSSLogo" name="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
