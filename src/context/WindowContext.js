@@ -1,12 +1,14 @@
 import React from "react";
 
-const WidthContext = React.createContext();
-export const useWidth = () => React.useContext(WidthContext);
+const WindowContext = React.createContext();
+export const useWindow = () => React.useContext(WindowContext);
 
-const WidthContextProvider = ({ children }) => {
+const WindowContextProvider = ({ children }) => {
     const [width, setWindowWidth] = React.useState(0);
+    const [height, setWindowHeight] = React.useState(0);
     const updateDimensions = () => {
         setWindowWidth(window.innerWidth);
+        setWindowHeight(window.innerHeight);
     };
 
     React.useEffect(() => {
@@ -17,10 +19,10 @@ const WidthContextProvider = ({ children }) => {
         };
     }, []);
 
-    const value = { width };
+    const value = { width, height };
     return (
-        <WidthContext.Provider value={value}>{children}</WidthContext.Provider>
+        <WindowContext.Provider value={value}>{children}</WindowContext.Provider>
     );
 };
 
-export default WidthContextProvider;
+export default WindowContextProvider;

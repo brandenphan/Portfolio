@@ -2,9 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Layout from '../components/Layout'
 import { Grid, Typography } from '@mui/material'
-import guelph from "../images/guelph2.png";
 import styled from "styled-components";
-
 import javascript from "../images/javascript.svg"
 import html from "../images/html.svg"
 import css from "../images/css.svg"
@@ -23,21 +21,24 @@ import python from "../images/python.svg"
 import linux from "../images/linux.svg"
 import docker from "../images/docker.svg"
 import mocha from "../images/mocha.svg"
+import EducationHeader from '../components/EducationComponents/EducationHeader';
+import EducationBox from '../components/EducationComponents/EducationBox';
+import SkillHeader from '../components/EducationComponents/SkillHeader';
 
 
 export default function Education() {
-    const [width, setWindowWidth] = React.useState(0);
-    const updateDimensions = () => {
-        setWindowWidth(window.innerWidth);
-    }
+    // const [width, setWindowWidth] = React.useState(0);
+    // const updateDimensions = () => {
+    //     setWindowWidth(window.innerWidth);
+    // }
 
-    React.useEffect(() => {
-        updateDimensions();
-        window.addEventListener("resize", updateDimensions);
-        return () => {
-            window.removeEventListener("resize", updateDimensions);
-        };
-    }, []);
+    // React.useEffect(() => {
+    //     updateDimensions();
+    //     window.addEventListener("resize", updateDimensions);
+    //     return () => {
+    //         window.removeEventListener("resize", updateDimensions);
+    //     };
+    // }, []);
 
     return (
         <Layout>
@@ -47,63 +48,22 @@ export default function Education() {
                 <Grid container>
                     <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>
 
-                    {width > 1600 && <EducationComponent outerLength={3} lineLength={2.25} innerLength={1.5} />}
-                    {width <= 1600 && width > 1300 && <EducationComponent outerLength={3} lineLength={2} innerLength={2} />}
-                    {width <= 1300 && width > 900 && <EducationComponent outerLength={2} lineLength={2.75} innerLength={2.5} />}
-                    {width <= 900 && width > 600 && <EducationComponent outerLength={1.5} lineLength={2.75} innerLength={3.5} />}
-                    {width <= 600 && width > 500 && <EducationComponent outerLength={1} lineLength={2.75} innerLength={4.5} />}
-                    {width <= 500 && <EducationComponent outerLength={1} lineLength={2} innerLength={6} />}
+                    <EducationHeader />
 
  
-
-
-
-                    
-
                     <Grid item xs={12}><br /><br /></Grid>
-                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <Grid container sx={{width: "50%", padding: "1%", border: "2px solid #d7e3fc", boxShadow: "1px 1px 4px 4px #d7e3fc", backgroundColor: "#d7e3fc"}}>
-                            <Grid item xs={3}>
-                                <img src={guelph} alt="UniversityOfGuelphLogo" />
-                            </Grid>
-                            <Grid item xs={4}>
-                                <div>
-                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>University of Guelph</Typography>
-                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Bachelor of Computing</Typography>
-                                    <ul>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Major in Computer Science</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Minor in Business</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>4.0 GPA</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Dean's List: 2019, 2020, 2021</Typography></li>
-                                    </ul>
-                                </div>
-                            </Grid>
-                            <Grid item xs={5} sx={{display: "flex", justifyContent: "flex-end"}}>
-                                <div>
-                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019 - Present</Typography>
-                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Guelph, ON, Canada</Typography>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+
+                    <EducationBox />
+
+    
+
+
+
                     <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
 
-                    <Grid item xs={3} />
-                    <Grid item xs={2.5}>
-                        <br />
-                        <hr style={{border: "1px solid #E60268"}} />
-                    </Grid>
-                    <Grid item xs={1} sx={{display: "flex", justifyContent: "center"}}>
-                        <Typography variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>Skills</b></Typography>
-                        <br />
-                        <br />
-                        <br />
-                    </Grid>
-                    <Grid item xs={2.5}>
-                        <br />
-                        <hr style={{border: "1px solid #E60268"}} />
-                    </Grid>
-                    <Grid item xs={3} />
+                    <SkillHeader />
+
+                   
 
                     <Grid item xs={12} sx={{marginTop: "1%"}}>
                         <Grid container>
@@ -209,23 +169,7 @@ const SkillComponent = ({src, alt, name}) => (
     </StyledDiv>
 )
 
-const EducationComponent = ({outerLength, lineLength, innerLength}) => (
-    <>
-        <Grid item xs={outerLength} />
-        <Grid item xs={lineLength}>
-            <br />
-            <hr style={{border: "1px solid #3672FF"}} />
-        </Grid>
-        <Grid item xs={innerLength} sx={{display: "flex", justifyContent: "center"}}>
-            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
-        </Grid>
-        <Grid item xs={lineLength}>
-            <br />
-            <hr style={{border: "1px solid #3672FF  "}} />    
-        </Grid>
-        <Grid item xs={outerLength} />    
-    </>
-)
+
 
 
 const StyledDiv = styled.div`

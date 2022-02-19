@@ -4,20 +4,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import {useLocation} from "@reach/router";
 import { navigate } from "gatsby";
+import { useWindow } from "../context/WindowContext";
 
 export default function NavBar() {
-    const [width, setWindowWidth] = React.useState(0);
-    const updateDimensions = () => {
-        setWindowWidth(window.innerWidth);
-    };
-
-    React.useEffect(() => {
-        updateDimensions();
-        window.addEventListener("resize", updateDimensions);
-        return () => {
-            window.removeEventListener("resize", updateDimensions);
-        };
-    }, []);
+    const {width} = useWindow();
     
     return (
         <>
