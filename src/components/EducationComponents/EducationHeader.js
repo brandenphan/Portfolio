@@ -10,11 +10,11 @@ export default function EducationHeader() {
         <>
             {width > 1600 && <EducationComponent outerLength={3} lineLength={2.25} innerLength={1.5} />}
             {width <= 1600 && width > 1300 && <EducationComponent outerLength={3} lineLength={2} innerLength={2} />}
-            {width <= 1300 && width > 1000 && <EducationComponent outerLength={2} lineLength={2.75} innerLength={2.5} />}
+            {width <= 1300 && width > 1000 && <EducationComponent outerLength={2} lineLength={2.5} innerLength={3} />}
             {width <= 1000 && width > 600 && <EducationComponent outerLength={1.5} lineLength={2.75} innerLength={3.5} />}
-            {width <= 600 && width > 500 && <EducationComponent outerLength={1.5} lineLength={2.25} innerLength={4.5} />}
-            {width <= 500 && width > 400 && <EducationComponent outerLength={1.5} lineLength={2} innerLength={5} />}
-            {width <= 400 && <EducationComponent outerLength={1.5} lineLength={1.5} innerLength={6} />}
+            {width <= 600 && width > 500 && <EducationComponent outerLength={1.5} lineLength={2} innerLength={5} />}
+            {width <= 500 && width > 400 && <EducationComponent outerLength={1.5} lineLength={1.5} innerLength={6} />}
+            {width <= 400 && <EducationComponent outerLength={1.5} lineLength={1} innerLength={7} />}
         </>
     )
 }
