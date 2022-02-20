@@ -21,7 +21,7 @@ export default function EducationBox() {
             {width <= 660 && (
                 <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                     <Grid container sx={{width: "74%", padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center", marginTop: "2%"}}>
+                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center", marginTop: "6%"}}>
                             <img src={guelph} alt="UniversityOfGuelphLogo" />
                         </Grid>
                         <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>

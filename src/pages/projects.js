@@ -8,7 +8,7 @@ import lotus from "../images/lotus2.png";
 import javascript from "../images/javascript.svg";
 import reactImage from "../images/react.svg";
 import node from "../images/node.svg";
-import GitHubIcon from '@mui/icons-material/GitHub';
+// import GitHubIcon from '@mui/icons-material/GitHub';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 export default function Projects() {
@@ -67,7 +67,7 @@ export default function Projects() {
                                             <img src={reactImage} alt="ReactLogo" height="70%" width="70%" />
                                         </Grid>             
 
-                                        <Grid item xs={6} sx={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
+                                        <Grid item xs={3} sx={{display: "flex", justifyContent: "flex-end", alignItems: "center"}}>
                                             <Button sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#1B5FFF"}, height: "50%"}}>
                                                 <Typography variant="subtitle1">&nbsp;</Typography>
                                                 <ExitToAppIcon sx={{color: "white"}} />
