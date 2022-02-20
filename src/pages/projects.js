@@ -39,7 +39,7 @@ export default function Projects() {
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container sx={{width: "70%", borderRadius: "5px",  border: "2px solid #d7e3fc", boxShadow: "0px 4px 8px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                            <Grid item xs={6}>
+                            <Grid item xs={6} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <img src={lotus} alt="LotusImage" height="100%" width="100%" style={{borderRadius: "5px 0px 0px 5px"}} />
                             </Grid>
                             <Grid item xs={0.2} />
@@ -50,7 +50,7 @@ export default function Projects() {
                                     <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>
                                         <b>Lotus Thai & Vietnamese Cuisine</b>
                                     </Typography>
-                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Developed a web-application to display information pertaining to the Lotus Thai & Vietnamese cuisine restaurant. Written in JavaScript utilizing the React framework. Emphasis on a modern and responsive user interface while optimizing SEO to increase custom traffic to the web-application.</Typography>
+                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>A web-application to display information pertaining to the Lotus Thai & Vietnamese cuisine restaurant. Written in JavaScript utilizing the React framework. Emphasis on a modern and responsive user interface while optimizing SEO to increase custom traffic to the web-application.</Typography>
                                     <br />
                                     <br />
                                     <br />

@@ -50,7 +50,7 @@ const FirstForm = ({width, imageLength, informationLength, dateLength}) => (
     <>
         <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
         <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-            <Grid item xs={imageLength}>
+            <Grid item xs={imageLength} sx={{display: "flex", alignItems: "center"}}>
                 <img src={guelph} alt="UniversityOfGuelphLogo" />
             </Grid>
             <Grid item xs={informationLength}>
@@ -79,7 +79,7 @@ const FirstForm = ({width, imageLength, informationLength, dateLength}) => (
 const SecondForm = ({width, imageLength, informationLength}) => (
     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
         <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-            <Grid item xs={imageLength}>
+            <Grid item xs={imageLength} sx={{display: "flex", alignItems: "center"}}>
                 <img src={guelph} alt="UniversityOfGuelphLogo" />
             </Grid>
             <Grid item xs={informationLength}>
