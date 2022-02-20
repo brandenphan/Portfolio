@@ -1,14 +1,15 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 import Layout from "../components/Layout"
-import { Grid, Typography } from "@mui/material"
+import { Button, Grid, Typography } from "@mui/material"
 import "@fontsource/source-sans-pro";
-import schedulemaker from "../images/schedulemaker.png";
+// import schedulemaker from "../images/schedulemaker.png";
 import lotus from "../images/lotus2.png";
 import javascript from "../images/javascript.svg";
 import reactImage from "../images/react.svg";
 import node from "../images/node.svg";
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 export default function Projects() {
     return (
@@ -70,6 +71,22 @@ export default function Projects() {
                                             <img src={node} alt="NodeLogo" height="70%" width="70%" />
                                         </Grid>
                                         <Grid item xs={3} />
+
+                                        <Grid item xs={3} />
+                                        <Grid item xs={3} sx={{display: "flex", justifyContent: "center"}}>
+                                            <Button sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#3672FF"}}}>
+                                                <ExitToAppIcon sx={{color: "white", marginTop: "2%"}} />
+                                                <Typography variant="subtitle1" sx={{color: "white", fontFamily: "Source Sans Pro"}}>&nbsp;&nbsp;Live&nbsp;&nbsp;</Typography>
+                                            </Button>
+                                        </Grid>
+                                        <Grid item xs={3} sx={{display: "flex", justifyContent: "center"}}>
+                                            <Button sx={{color: "#3672FF", border: "2px solid #3672FF"}}>
+                                                <GitHubIcon sx={{marginTop: "2%"}} />
+                                                <Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>&nbsp;&nbsp;Code&nbsp;&nbsp;</Typography>
+                                            </Button>
+                                        </Grid>
+                                        <Grid item xs={3} />
+
                                     </Grid>
                                 </div>
                             </Grid>
