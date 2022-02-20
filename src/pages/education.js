@@ -28,7 +28,7 @@ export default function Education() {
                 <NavBar />
 
                 <Grid container>
-                    
+                 
                     {width > 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>}
                     {width <= 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>}
                     

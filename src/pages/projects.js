@@ -1,7 +1,14 @@
 import React from "react"
 import NavBar from "../components/NavBar"
 import Layout from "../components/Layout"
-import { Grid } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
+import "@fontsource/source-sans-pro";
+import schedulemaker from "../images/schedulemaker.png";
+import lotus from "../images/lotus2.png";
+import javascript from "../images/javascript.svg";
+import reactImage from "../images/react.svg";
+import node from "../images/node.svg";
+
 
 export default function Projects() {
     return (
@@ -10,9 +17,78 @@ export default function Projects() {
                 <NavBar />
 
                 <Grid container>
-                    <Grid item xs={12} sx={{height: "100vh"}}>
-                        <p>work, personal, education</p>
+                    <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>
+                    
+                    <Grid item xs={3} />
+                        <Grid item xs={2.25}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={1.5} sx={{display: "flex", justifyContent: "center"}}>
+                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Projects</b></Typography>
+                        </Grid>
+                        <Grid item xs={2.25}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />    
+                        </Grid>
+                    <Grid item xs={3} />    
+
+                    <Grid item xs={12}><br /><br /><br /></Grid>
+
+
+                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                        <Grid container sx={{width: "70%", borderRadius: "5px", padding: "1%", border: "2px solid #d7e3fc", boxShadow: "0px 4px 8px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
+                            <Grid item xs={0.2} />
+                            <Grid item xs={6}>
+                                <img src={lotus} alt="LotusImage" height="100%" width="100%" style={{borderRadius: "5px"}} />
+                            </Grid>
+                            <Grid item xs={0.2} />
+                            <Grid item xs={5.6}>
+                                <div>
+                                    <br />
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>
+                                        <b>Lotus Thai & Vietnamese Cuisine</b>
+                                    </Typography>
+                                    {/* <br /> */}
+                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Developed a Web-application to display information pertaining to the Lotus Thai & Vietnamese cuisine restaurant. Written in JavaScript utilizing the React framework. Focus on a modern and responsive user interface while optimizing SEO to increase custom traffic to the web-application.</Typography>
+                                    <br />
+                                    <Grid container>
+                                        {/* <Grid item xs={12}>
+                                            <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}>
+                                                <b>Made with</b>
+                                            </Typography>
+                                            <br />
+                                        </Grid> */}
+                                        <Grid item xs={3} />
+                                        <Grid item xs={2} sx={{display: "flex", justifyContent: "center"}}>
+                                            <img src={javascript} alt="JavaScriptLogo" height="70%" width="70%" />
+                                        </Grid>
+                                        <Grid item xs={2} sx={{display: "flex", justifyContent: "center"}}>
+                                            <img src={reactImage} alt="ReactLogo" height="70%" width="70%" />
+                                        </Grid>             
+                                        <Grid item xs={2} sx={{display: "flex", justifyContent: "center"}}>
+                                            <img src={node} alt="NodeLogo" height="70%" width="70%" />
+                                        </Grid>
+                                        <Grid item xs={3} />
+                                    </Grid>
+                                </div>
+                            </Grid>
+                        </Grid>
                     </Grid>
+
+                    <Grid item xs={12}><br /><br /></Grid>
+
+                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                        <Grid container sx={{width: "70%", borderRadius: "5px", padding: "1%", border: "2px solid #d7e3fc", boxShadow: "0px 4px 8px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
+                            <Grid item xs={0.2} />
+                            <Grid item xs={6}>
+                                <img src={lotus} alt="" height="100%" width="100%" style={{borderRadius: "5px"}} />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    
+                    <Grid item xs={12} sx={{height: "100vh"}} />
                 </Grid>
 
             </div>

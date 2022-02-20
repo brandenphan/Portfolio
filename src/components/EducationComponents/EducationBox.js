@@ -20,7 +20,7 @@ export default function EducationBox() {
 
             {width <= 660 && (
                 <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                    <Grid container sx={{width: "74%", padding: "1%", border: "2px solid #d7e3fc", boxShadow: "1px 1px 4px 4px #d7e3fc", backgroundColor: "#d7e3fc"}}>
+                    <Grid container sx={{width: "74%", padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
                         <Grid item xs={12} sx={{display: "flex", justifyContent: "center", marginTop: "2%"}}>
                             <img src={guelph} alt="UniversityOfGuelphLogo" />
                         </Grid>
@@ -49,7 +49,7 @@ export default function EducationBox() {
 const FirstForm = ({width, imageLength, informationLength, dateLength}) => (
     <>
         <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-        <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", boxShadow: "1px 1px 4px 4px #d7e3fc", backgroundColor: "#d7e3fc"}}>
+        <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
             <Grid item xs={imageLength}>
                 <img src={guelph} alt="UniversityOfGuelphLogo" />
             </Grid>
@@ -78,7 +78,7 @@ const FirstForm = ({width, imageLength, informationLength, dateLength}) => (
 
 const SecondForm = ({width, imageLength, informationLength}) => (
     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-        <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", boxShadow: "1px 1px 4px 4px #d7e3fc", backgroundColor: "#d7e3fc"}}>
+        <Grid container sx={{width: width, padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
             <Grid item xs={imageLength}>
                 <img src={guelph} alt="UniversityOfGuelphLogo" />
             </Grid>
