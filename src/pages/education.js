@@ -10,6 +10,7 @@ import Skills from '../components/EducationComponents/Skills';
 import { graphql } from 'gatsby';
 
 export default function Education({ data }) {
+    const { designedBy, copyright } = data.site.siteMetadata;
     const [width, setWindowWidth] = React.useState(0);
     const updateDimensions = () => {
         setWindowWidth(window.innerWidth);
@@ -52,8 +53,8 @@ export default function Education({ data }) {
                             <br />
                             <br />
                             <br />
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">Designed by Branden Phan</Typography>
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">Copyright © 2022 - All Rights Reserved.</Typography>
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
                             <br />
                             <br />
                         </div>
@@ -78,6 +79,12 @@ export const query = graphql`
                 point4
                 programDates
                 location
+            }
+        }
+        site {
+            siteMetadata {
+                designedBy
+                copyright
             }
         }
     }
