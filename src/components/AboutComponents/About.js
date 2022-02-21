@@ -8,8 +8,9 @@ import React from "react";
 import profile from "../../images/profile2.png";
 import { useWindow } from "../../context/WindowContext";
 
-export default function About() {
-    const {width, height} = useWindow();
+export default function About({ siteData }) {
+    const { width, height } = useWindow();
+    const { intro, name, jobTitle, description } = siteData.site.siteMetadata;
 
     return (
         <>
@@ -20,9 +21,9 @@ export default function About() {
                             <Grid item xs={1.5} />
                             <Grid item xs={5} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-5%"}}>
-                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -61,9 +62,9 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%"}}>
-                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -101,9 +102,9 @@ export default function About() {
                             <Grid item xs={1} />
                             <Grid item xs={5.5} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-4%"}}>
-                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -143,9 +144,9 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "1%"}}>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -183,9 +184,9 @@ export default function About() {
                             <Grid item xs={0.5} />
                             <Grid item xs={6} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-4%"}}>
-                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h3" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -225,9 +226,9 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%"}}>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -264,10 +265,10 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-4%"}}>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{name}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "6%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -300,9 +301,9 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-1%"}}>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -339,10 +340,10 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-4%"}}>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
-                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}><b>Branden Phan</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
+                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}><b>{name}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "6%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">
@@ -375,10 +376,10 @@ export default function About() {
                         <Grid container>
                             <Grid item xs={12} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
                                 <div style={{padding: "10%", marginTop: "-1%"}}>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro"}}><b>Hi, I'm</b></Typography>
-                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "1%"}}><b>Branden Phan</b></Typography>
-                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>Software Developer</b></Typography>
-                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>A 3rd year computer science student at the University of Guelph</Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
+                                    <Typography align="center" variant="h5" sx={{fontFamily: "Source Sans Pro", marginTop: "1%"}}><b>{name}</b></Typography>
+                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                    <Typography align="center" variant="subtitle1" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: "4%"}}>
                                         <Grid item>
                                             <Tooltip title="Github">

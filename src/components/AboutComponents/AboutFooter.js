@@ -2,8 +2,9 @@ import React from "react";
 import { useWindow } from "../../context/WindowContext";
 import { Grid, Typography } from "@mui/material";
 
-export default function AboutFooter() {
-    const {height} = useWindow();
+export default function AboutFooter({ siteData }) {
+    const { height } = useWindow();
+    const { designedBy, copyright } = siteData.site.siteMetadata;
 
     return (
         <>
@@ -14,8 +15,8 @@ export default function AboutFooter() {
                         <Grid container>
                             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                                 <div>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">Designed by Branden Phan</Typography>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">Copyright © 2022 - All Rights Reserved.</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
                                 </div>
                             </Grid>
                         </Grid>
@@ -30,8 +31,8 @@ export default function AboutFooter() {
                         <Grid container>
                             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                                 <div>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">Designed by Branden Phan</Typography>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">Copyright © 2022 - All Rights Reserved.</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
                                 </div>
                             </Grid>
                         </Grid>
@@ -45,8 +46,8 @@ export default function AboutFooter() {
                         <Grid container>
                             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                                 <div>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">Designed by Branden Phan</Typography>
-                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">Copyright © 2022 - All Rights Reserved.</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                    <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
                                 </div>
                             </Grid>
                         </Grid>
