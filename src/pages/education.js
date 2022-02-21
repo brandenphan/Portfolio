@@ -7,8 +7,9 @@ import EducationBox from '../components/EducationComponents/EducationBox';
 import SkillHeader from '../components/EducationComponents/SkillHeader';
 import "@fontsource/source-sans-pro";
 import Skills from '../components/EducationComponents/Skills';
+import { graphql } from 'gatsby';
 
-export default function Education() {
+export default function Education({ data }) {
     const [width, setWindowWidth] = React.useState(0);
     const updateDimensions = () => {
         setWindowWidth(window.innerWidth);
@@ -36,7 +37,7 @@ export default function Education() {
 
                     <Grid item xs={12}><br /><br /></Grid>
 
-                    <EducationBox />
+                    <EducationBox siteData={data} />
 
                     <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
 
@@ -64,3 +65,20 @@ export default function Education() {
     )
 }
 
+export const query = graphql`
+    query EducationQuery {
+        markdownRemark(fileAbsolutePath: {regex: "/Education.md/"}) {
+            frontmatter {
+                title
+                school
+                major
+                point1
+                point2
+                point3
+                point4
+                programDates
+                location
+            }
+        }
+    }
+`

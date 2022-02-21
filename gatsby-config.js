@@ -9,6 +9,13 @@ module.exports = {
         copyright: "Copyright © 2022 - All Rights Reserved.",
     },
     plugins: [
-
+        "gatsby-transformer-remark",
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdowns`,
+                path: `${__dirname}/src/markdowns/`,
+            },
+        }
     ]
 }
