@@ -3,14 +3,15 @@ import NavBar from '../components/NavBar'
 import Layout from "../components/Layout"
 import { Grid, Typography, Button, Collapse } from "@mui/material"
 import { graphql } from 'gatsby';
+import "@fontsource/source-sans-pro";
 
 export default function Work({ data }) {
     const { designedBy, copyright } = data.Footer.siteMetadata;
+
     const [width, setWindowWidth] = React.useState(0);
     const updateDimensions = () => {
         setWindowWidth(window.innerWidth);
     }
-
     React.useEffect(() => {
         updateDimensions();
         window.addEventListener("resize", updateDimensions);
@@ -21,7 +22,6 @@ export default function Work({ data }) {
 
     const [openLotus, setOpenLotus] = React.useState(false);
     const [openExtremePC, setOpenExtremePC] = React.useState(false);
-
     const handleOpenLotus = () => {
         if (openLotus === true) {
             setOpenLotus(false);
@@ -41,7 +41,7 @@ export default function Work({ data }) {
 
     return (
         <Layout>
-            <div>
+            <div style={{minHeight: "100vh"}}>
                 <NavBar />
                 
                 <Grid container>
@@ -68,8 +68,10 @@ export default function Work({ data }) {
                     <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
                     <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
 
+
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
+                            {width <= 1000 && (<><br /><br /></>)}
                             <br />
                             <br />
                             <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
@@ -121,7 +123,6 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>{jobTitle}</b></Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{date}</Typography>
-                                <br />
                                 <Collapse in={open}>
                                     <ul className="test" style={{display: "block"}}>
                                         <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
@@ -131,9 +132,12 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                     </ul>
                                 </Collapse>
                                 {open ? (
-                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF"}}>Collapse</Button>
+                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Collapse</b></Button>
                                 ) : (
-                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF"}}>Read More</Button>
+                                    <>
+                                        <br />
+                                        <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Read More</b></Button>
+                                    </>
                                 )}
                             </div>
                         </Grid>
