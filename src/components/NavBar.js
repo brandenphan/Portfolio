@@ -42,10 +42,16 @@ export default function NavBar() {
                             </div>
 
                             <div style={{width: navBarWidthBreakpoint(width), display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
-                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
-                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
+                                {["About", "Education", "Projects", "Work"].map((instance, ID) => {
+                                    let navigation;
+                                    if (instance === "About") {
+                                        navigation = "/";
+                                    }
+                                    else {
+                                        navigation = "/" + instance.toLowerCase();
+                                    }
+                                    return (<ButtonComponent key={ID} onClick={() => {navigate(navigation)}} navigate={navigation} buttonName={instance} />)
+                                })}
                             </div>
                         </Toolbar>
                     </AppBar>
@@ -68,29 +74,16 @@ export default function NavBar() {
                                 open={open}
                                 onClose={handleClose}
                             >
-                                <MenuItemComponent
-                                    menuName="About"
-                                    navigate="/"
-                                    onClick={() => {navigate('/')}}
-                                />
-
-                                <MenuItemComponent
-                                    menuName="Education"
-                                    navigate="/Education"
-                                    onClick={() => {navigate('/education')}}
-                                />
-
-                                <MenuItemComponent
-                                    menuName="Projects"
-                                    navigate="/Projects"
-                                    onClick={() => {navigate('/projects')}}
-                                />
-
-                                <MenuItemComponent
-                                    menuName="Work"
-                                    navigate="/Work"
-                                    onClick={() => {navigate('/work')}}
-                                />
+                                {["About", "Education", "Projects", "Work"].map((instance, ID) => {
+                                    let navigation;
+                                    if (instance === "About") {
+                                        navigation = "/";
+                                    }
+                                    else {
+                                        navigation = "/" + instance.toLowerCase();
+                                    }
+                                    return (<MenuItemComponent key={ID} menuName={instance} navigate={navigation} onClick={() => navigate(navigation)} />)
+                                })}
                             </Menu>
                         </Toolbar>
                     </AppBar>

@@ -175,10 +175,9 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                     <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}><b>{title}</b></Typography>
                                     <Typography variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>{jobTitle}</b></Typography>
                                     <ul>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
+                                        {[point1, point2, point3, point4].map((instance, ID) => (
+                                            <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
+                                        ))}
                                     </ul>
                                 </div>
                             </Grid>
@@ -199,29 +198,26 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{date}</Typography>
                                 {width > 700 ? (
-                                    <ul className="test" style={{display: "block"}}>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
-                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
+                                    <ul style={{display: "block"}}>
+                                        {[point1, point2, point3, point4].map((instance, ID) => (
+                                            <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
+                                        ))}
                                     </ul>
                                 ) : (
                                     <>
                                         <Collapse in={open}>
                                             <ul className="test" style={{display: "block"}}>
-                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
-                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
-                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
-                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
+                                                {[point1, point2, point3, point4].map((instance, ID) => (
+                                                    <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
+                                                ))}
                                             </ul>
                                         </Collapse>
-                                        {open ? (
-                                            <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Collapse</b></Button>
-                                        ) : (
-                                            <>
-                                                <br />
-                                                <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Read More</b></Button>
-                                            </>
+                                        {open ? (<Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Collapse</b></Button>) 
+                                        : (
+                                        <>
+                                            <br />
+                                            <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Read More</b></Button>
+                                        </>
                                         )}
                                     </>
                                 )}
