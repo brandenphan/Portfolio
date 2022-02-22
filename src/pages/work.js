@@ -71,7 +71,7 @@ export default function Work({ data }) {
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
-                            {width <= 1000 && (<><br /><br /></>)}
+                            {width <= 700 && width > 400 && (<><br /><br /></>)}
                             <br />
                             <br />
                             <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
@@ -93,7 +93,7 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
         <>
             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                 <Grid container sx={{width: boxWidth(width), padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                    {width > 1000 && (
+                    {width > 1000 ? (
                         <>
                             <Grid item xs={8} sx={{display: "flex", justifyContent: "center"}}>
                                 <div>
@@ -114,8 +114,8 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                 </div>
                             </Grid>
                         </>
-                    )}
-                    {width <= 1000 && (
+                    )
+                    : (
                         <Grid item xs={12} sx={{display: "flex", justifyContent: "center", paddingRight: "1.5%"}}>
                             <div>
                                 <br />
@@ -123,20 +123,31 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>{jobTitle}</b></Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{date}</Typography>
-                                <Collapse in={open}>
+                                {width > 700 ? (
                                     <ul className="test" style={{display: "block"}}>
                                         <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
                                         <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
                                         <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
                                         <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
                                     </ul>
-                                </Collapse>
-                                {open ? (
-                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Collapse</b></Button>
                                 ) : (
                                     <>
-                                        <br />
-                                        <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Read More</b></Button>
+                                        <Collapse in={open}>
+                                            <ul className="test" style={{display: "block"}}>
+                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
+                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
+                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
+                                                <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
+                                            </ul>
+                                        </Collapse>
+                                        {open ? (
+                                            <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Collapse</b></Button>
+                                        ) : (
+                                            <>
+                                                <br />
+                                                <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF", fontFamily: "Source Sans Pro"}}><b>Read More</b></Button>
+                                            </>
+                                        )}
                                     </>
                                 )}
                             </div>
