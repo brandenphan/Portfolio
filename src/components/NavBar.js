@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Toolbar, AppBar, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import LightModeIcon from '@mui/icons-material/LightMode';
-import {useLocation} from "@reach/router";
+import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import "@fontsource/source-sans-pro";
 
@@ -11,7 +11,6 @@ export default function NavBar() {
     const updateDimensions = () => {
         setWindowWidth(window.innerWidth);
     }
-
     React.useEffect(() => {
         updateDimensions();
         window.addEventListener("resize", updateDimensions);
@@ -20,19 +19,29 @@ export default function NavBar() {
         };
     }, []);
     
+    const [menuElement, setMenuElement] = React.useState(null);
+    const open = Boolean(menuElement);
+
+    const handleClick = (event) => {
+        setMenuElement(event.currentTarget);
+    };
+    const handleClose = () => {
+        setMenuElement(null);
+    };
+
     return (
         <>
-            {width > 1400 && (
+            {width > 700 ? (
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
-                            <div style={{marginLeft: "12%"}}>
+                            <div style={{marginLeft: navBarMarginBreakpoint(width)}}>
                                 <IconButton sx={{"&:hover": {color: "black"}}}>
                                     <LightModeIcon />
                                 </IconButton>
                             </div>
 
-                            <div style={{width: "70%", display: "flex", justifyContent: "flex-end"}}>
+                            <div style={{width: navBarWidthBreakpoint(width), display: "flex", justifyContent: "flex-end"}}>
                                 <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
                                 <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
                                 <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
@@ -41,54 +50,78 @@ export default function NavBar() {
                         </Toolbar>
                     </AppBar>
                 </Box>
-            )}
+            ) : (
+                <Box sx={{flexGrow: 1, position: "fixed", top: "0", left: "0", width: "100%"}}>
+                    <AppBar position="static" sx={{ background: "transparent", boxShadow: "none" }}>
+                        <Toolbar sx={{marginTop: "2%"}}>
+                            <IconButton sx={{"&:hover": {color: "black"}, marginLeft: "2%"}}>
+                                <LightModeIcon style={{fontSize: "35px"}} />
+                            </IconButton>
+                            <IconButton sx={{ position: "absolute", right: "0", marginRight: "3%"}}
+                                onClick={handleClick}
+                                aria-label="MenuButton"
+                            >
+                                <MenuIcon sx={{ fontSize: "45px", color: "#E60268" }}/>
+                            </IconButton>
+                            <Menu
+                                anchorEl={menuElement}
+                                open={open}
+                                onClose={handleClose}
+                            >
+                                <MenuItemComponent
+                                    menuName="About"
+                                    navigate="/"
+                                    onClick={() => {navigate('/')}}
+                                />
 
-            {width <= 1400 && width > 1000 && (
-                <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
-                    <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
-                        <Toolbar>
-                            <div style={{marginLeft: "10%"}}>
-                                <IconButton sx={{"&:hover": {color: "black"}}}>
-                                    <LightModeIcon />
-                                </IconButton>
-                            </div>
+                                <MenuItemComponent
+                                    menuName="Education"
+                                    navigate="/Education"
+                                    onClick={() => {navigate('/education')}}
+                                />
 
-                            <div style={{width: "80%", display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
-                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
-                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
-                            </div>
+                                <MenuItemComponent
+                                    menuName="Projects"
+                                    navigate="/Projects"
+                                    onClick={() => {navigate('/projects')}}
+                                />
+
+                                <MenuItemComponent
+                                    menuName="Work"
+                                    navigate="/Work"
+                                    onClick={() => {navigate('/work')}}
+                                />
+                            </Menu>
                         </Toolbar>
                     </AppBar>
                 </Box>
             )}
-
-            {width <= 1000 && width > 700 && (
-                <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
-                    <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
-                        <Toolbar>
-                            <div style={{marginLeft: "6%"}}>
-                                <IconButton sx={{"&:hover": {color: "black"}}}>
-                                    <LightModeIcon />
-                                </IconButton>
-                            </div>
-
-                            <div style={{width: "86%", display: "flex", justifyContent: "flex-end"}}>
-                                <ButtonComponent onClick={() => {navigate('/')}} navigate="/" buttonName="About" />
-                                <ButtonComponent onClick={() => {navigate('/education')}} navigate="/Education" buttonName="Education" />
-                                <ButtonComponent onClick={() => {navigate('/projects')}} navigate="/Projects" buttonName="Projects" />
-                                <ButtonComponent onClick={() => {navigate('/work')}} navigate="/Work" buttonName="Work" />
-                            </div>
-                        </Toolbar>
-                    </AppBar>
-                </Box>
-            )}
-
-            {width <= 700 && (<MenuComponent navigateFunction={(navigateUrl) => {navigate(navigateUrl)}} />)}
         </>
-
     )
+}
+
+const navBarMarginBreakpoint = (width) => {
+    if (width > 1400) {
+        return "12%";
+    }
+    else if (width <= 1400 && width > 1000) {
+        return "10%";
+    }
+    else if (width <= 1000) {
+        return "6%";
+    }
+}
+
+const navBarWidthBreakpoint = (width) => {
+    if (width > 1400) {
+        return "70%";
+    }
+    else if (width <= 1400 && width > 1000) {
+        return "80%";
+    }
+    else if (width <= 1000) {
+        return "86%";
+    }
 }
 
 const ButtonComponent = ({navigate, buttonName, onClick}) => {
@@ -122,85 +155,6 @@ const ButtonComponent = ({navigate, buttonName, onClick}) => {
     )
 }
 
-const MenuComponent = ({navigateFunction}) => {
-    const [menuElement, setMenuElement] = React.useState(null);
-    const open = Boolean(menuElement);
-
-    const handleClick = (event) => {
-        setMenuElement(event.currentTarget);
-    };
-    const handleClose = () => {
-        setMenuElement(null);
-    };
-
-    return (
-        <>
-            <Box
-                sx={{
-                    flexGrow: 1,
-                    position: "fixed",
-                    top: "0",
-                    left: "0",
-                    width: "100%",
-                }}
-            >
-                <AppBar
-                    position="static"
-                    sx={{ background: "transparent", boxShadow: "none" }}
-                >
-                    <Toolbar sx={{marginTop: "2%"}}>
-                        <IconButton sx={{"&:hover": {color: "black"}, marginLeft: "2%"}}>
-                            <LightModeIcon style={{fontSize: "35px"}} />
-                        </IconButton>
-                        <IconButton
-                            sx={{
-                                position: "absolute",
-                                right: "0",
-                                marginRight: "3%",
-                            }}
-                            onClick={handleClick}
-                            aria-label="MenuButton"
-                        >
-                            <MenuIcon
-                                sx={{ fontSize: "45px", color: "#E60268" }}
-                            />
-                        </IconButton>
-                        <Menu
-                            anchorEl={menuElement}
-                            open={open}
-                            onClose={handleClose}
-                        >
-                            <MenuItemComponent
-                                menuName="About"
-                                navigate="/"
-                                onClick={() => {navigateFunction('/')}}
-                            />
-
-                            <MenuItemComponent
-                                menuName="Education"
-                                navigate="/Education"
-                                onClick={() => {navigateFunction('/education')}}
-                            />
-
-                            <MenuItemComponent
-                                menuName="Projects"
-                                navigate="/Projects"
-                                onClick={() => {navigateFunction('/projects')}}
-                            />
-
-                            <MenuItemComponent
-                                menuName="Work"
-                                navigate="/Work"
-                                onClick={() => {navigateFunction('/work')}}
-                            />
-                        </Menu>
-                    </Toolbar>
-                </AppBar>
-            </Box>
-        </>
-    );
-};
-
 const MenuItemComponent = ({navigate, menuName, onClick}) => {
     const location = useLocation();
     const currentLocation = location.pathname.toLowerCase();
@@ -219,25 +173,9 @@ const MenuItemComponent = ({navigate, menuName, onClick}) => {
     return (
         <>
             {active ? (
-                <MenuItem
-                    sx={{
-                        backgroundColor: "#AAC7FD",
-                        fontFamily: "Source Sans Pro",
-                        fontSize: "20px",
-                    }}
-                >
-                    {menuName}
-                </MenuItem>
+                <MenuItem sx={{backgroundColor: "#AAC7FD", fontFamily: "Source Sans Pro", fontSize: "20px"}}>{menuName}</MenuItem>
             ) : (
-                <MenuItem
-                    sx={{
-                        fontFamily: "Source Sans Pro",
-                        fontSize: "20px",
-                    }}
-                    onClick={onClick}
-                >
-                    {menuName}
-                </MenuItem>
+                <MenuItem sx={{fontFamily: "Source Sans Pro", fontSize: "20px"}} onClick={onClick}>{menuName}</MenuItem>
             )}
         </>
     );
