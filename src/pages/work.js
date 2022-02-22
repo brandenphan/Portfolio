@@ -68,7 +68,6 @@ export default function Work({ data }) {
                     <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
                     <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
 
-
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
                             {width <= 700 && width > 400 && (<><br /><br /></>)}
@@ -86,9 +85,85 @@ export default function Work({ data }) {
     )
 }
 
+export const query = graphql`
+    query WorkQuery {
+        Lotus: markdownRemark(fileAbsolutePath: {regex: "/Lotus.md/"}) {
+            frontmatter {
+                title
+                jobTitle
+                point1
+                point2
+                point3
+                point4
+                date
+                location
+            }
+        }
+        ExtremePC: markdownRemark(fileAbsolutePath: {regex: "/ExtremePC.md/"}) {
+            frontmatter {
+                title
+                jobTitle
+                point1
+                point2
+                point3
+                point4
+                date
+                location
+            }
+        }
+        Footer: site {
+            siteMetadata {
+                designedBy
+                copyright
+            }
+        }
+    }
+`
+
+const lineLength = (width) => {
+    if (width > 800) {
+        return 3.5;
+    }
+    else if (width <= 800 && width > 600) {
+        return 3.25;
+    }
+    else if (width <= 600 && width > 500) {
+        return 3;
+    }
+    else if (width <= 500) {
+        return 2.5;
+    }
+}
+
+const innerLength = (width) => {
+    if (width > 1300) {
+        return 1;
+    }
+    else if (width <= 1300 && width > 800) {
+        return 2;
+    }
+    else if (width <= 800 && width > 600) {
+        return 2.5;
+    }
+    else if (width <= 600 && width > 500) {
+        return 3
+    }
+    else if (width <= 500) {
+        return 4;
+    }
+}
+
+const boxWidth = (width) => {
+    if (width > 1300) {
+        return "67%";
+    }
+    else if (width <= 1300) {
+        return "75%";
+    }
+}
+
 const WorkBox = ({ data, width, open, handleOpen }) => {
     const { title, jobTitle, point1, point2, point3, point4, date, location } = data.frontmatter;
-
     return (
         <>
             <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
@@ -159,80 +234,3 @@ const WorkBox = ({ data, width, open, handleOpen }) => {
         </>
     )
 }
-
-const boxWidth = (width) => {
-    if (width > 1300) {
-        return "67%";
-    }
-    else if (width <= 1300) {
-        return "75%";
-    }
-}
-
-const lineLength = (width) => {
-    if (width > 800) {
-        return 3.5;
-    }
-    else if (width <= 800 && width > 600) {
-        return 3.25;
-    }
-    else if (width <= 600 && width > 500) {
-        return 3;
-    }
-    else if (width <= 500) {
-        return 2.5;
-    }
-}
-
-const innerLength = (width) => {
-    if (width > 1300) {
-        return 1;
-    }
-    else if (width <= 1300 && width > 800) {
-        return 2;
-    }
-    else if (width <= 800 && width > 600) {
-        return 2.5;
-    }
-    else if (width <= 600 && width > 500) {
-        return 3
-    }
-    else if (width <= 500) {
-        return 4;
-    }
-}
-
-export const query = graphql`
-    query WorkQuery {
-        Lotus: markdownRemark(fileAbsolutePath: {regex: "/Lotus.md/"}) {
-            frontmatter {
-                title
-                jobTitle
-                point1
-                point2
-                point3
-                point4
-                date
-                location
-            }
-        }
-        ExtremePC: markdownRemark(fileAbsolutePath: {regex: "/ExtremePC.md/"}) {
-            frontmatter {
-                title
-                jobTitle
-                point1
-                point2
-                point3
-                point4
-                date
-                location
-            }
-        }
-        Footer: site {
-            siteMetadata {
-                designedBy
-                copyright
-            }
-        }
-    }
-`
