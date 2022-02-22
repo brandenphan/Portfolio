@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 import "@fontsource/source-sans-pro";
 
 export default function EducationHeader() {
-    const {width} = useWindow();
+    const { width } = useWindow();
 
     return (
         <>

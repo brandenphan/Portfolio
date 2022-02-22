@@ -30,7 +30,6 @@ export default function Education({ data }) {
                 <NavBar />
 
                 <Grid container>
-                 
                     {width > 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>}
                     {width <= 700 && <Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>}
                     
@@ -59,7 +58,6 @@ export default function Education({ data }) {
                             <br />
                         </div>
                     </Grid>
-
                 </Grid>
             </div>
         </Layout>

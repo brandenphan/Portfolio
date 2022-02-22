@@ -4,7 +4,7 @@ import { useWindow } from "../../context/WindowContext";
 import "@fontsource/source-sans-pro";
 
 export default function SkillHeader() {
-    const {width} = useWindow();
+    const { width } = useWindow();
 
     return (
         <>
