@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import Layout from "../components/Layout"
-import { Grid, Typography } from "@mui/material"
+import { Grid, Typography, Button, Collapse } from "@mui/material"
 import { graphql } from 'gatsby';
 
 export default function Work({ data }) {
@@ -18,6 +18,26 @@ export default function Work({ data }) {
             window.removeEventListener("resize", updateDimensions);
         };
     }, []);
+
+    const [openLotus, setOpenLotus] = React.useState(false);
+    const [openExtremePC, setOpenExtremePC] = React.useState(false);
+
+    const handleOpenLotus = () => {
+        if (openLotus === true) {
+            setOpenLotus(false);
+        }
+        else {
+            setOpenLotus(true);
+        }
+    }
+    const handleOpenExtremePC = () => {
+        if (openExtremePC === true) {
+            setOpenExtremePC(false);
+        }
+        else {
+            setOpenExtremePC(true);
+        }
+    }
 
     return (
         <Layout>
@@ -45,8 +65,8 @@ export default function Work({ data }) {
                     {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
 
                     <Grid item xs={12}><br /><br /></Grid>
-                    <WorkBox data={data.Lotus} width={width} />
-                    <WorkBox data={data.ExtremePC} width={width} />
+                    <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
+                    <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <div>
@@ -64,7 +84,7 @@ export default function Work({ data }) {
     )
 }
 
-const WorkBox = ({ data, width }) => {
+const WorkBox = ({ data, width, open, handleOpen }) => {
     const { title, jobTitle, point1, point2, point3, point4, date, location } = data.frontmatter;
 
     return (
@@ -101,12 +121,20 @@ const WorkBox = ({ data, width }) => {
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>{jobTitle}</b></Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
                                 <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{date}</Typography>
-                                <ul>
-                                    <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
-                                    <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
-                                    <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
-                                    <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
-                                </ul>
+                                <br />
+                                <Collapse in={open}>
+                                    <ul className="test" style={{display: "block"}}>
+                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point1}</Typography></li>
+                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point2}</Typography></li>
+                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point3}</Typography></li>
+                                        <li><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{point4}</Typography></li>
+                                    </ul>
+                                </Collapse>
+                                {open ? (
+                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF"}}>Collapse</Button>
+                                ) : (
+                                    <Button onClick={() => {handleOpen()}} sx={{color: "#3672FF"}}>Read More</Button>
+                                )}
                             </div>
                         </Grid>
                     )}
