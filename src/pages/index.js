@@ -8,7 +8,7 @@ import { graphql } from "gatsby";
 import { Grid, Typography, Tooltip } from "@mui/material";
 import "@fontsource/source-sans-pro";
 import styled from "styled-components";
-import profile from "../images/profile2.png";
+import profile from "../images/profile.png";
 
 export default function Index({ data }) {
     const { intro, name, jobTitle, description } = data.site.siteMetadata;

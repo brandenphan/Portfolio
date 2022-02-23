@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import { Grid, Typography } from '@mui/material'
 import "@fontsource/source-sans-pro";
 import { graphql } from 'gatsby';
-import guelph from "../images/guelph2.png";
+import guelph from "../images/guelph.png";
 import styled from "styled-components";
 import javascript from "../images/javascript.svg"
 import html from "../images/html.svg"
