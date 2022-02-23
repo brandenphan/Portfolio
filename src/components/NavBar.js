@@ -31,7 +31,7 @@ export default function NavBar() {
 
     return (
         <>
-            {width > 700 ? (
+            {width > 700 && (
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%", marginTop: "1%"}}>
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
@@ -56,7 +56,9 @@ export default function NavBar() {
                         </Toolbar>
                     </AppBar>
                 </Box>
-            ) : (
+            )}
+
+            {width <= 700 && width > 0 && (
                 <Box sx={{flexGrow: 1, position: "fixed", top: "0", left: "0", width: "100%"}}>
                     <AppBar position="static" sx={{ background: "transparent", boxShadow: "none" }}>
                         <Toolbar sx={{marginTop: "2%"}}>

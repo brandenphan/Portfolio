@@ -64,7 +64,7 @@ export default function Work({ data }) {
                     </Grid>
                     {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
 
-                    <Grid item xs={12}><br /><br /></Grid>
+                    {width > 1000 ? (<Grid item xs={12}><br /><br /></Grid>) : (<Grid item xs={12}><br /></Grid>)}
                     <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
                     <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
 
