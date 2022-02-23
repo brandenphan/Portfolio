@@ -68,7 +68,7 @@ export default function Education({ data }) {
 
                     <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container sx={{width: widthLength(width), padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                            <Grid item xs={imageLength(width)} sx={{display: "flex", alignItems: "center", justifyContent: width <= 660 && ("center"), marginTop: width <= 660 && ("center")}}>
+                            <Grid item xs={imageLength(width)} sx={{display: "flex", alignItems: "center", justifyContent: width <= 660 && ("center"), marginTop: width <= 660 && ("5%")}}>
                                 <img src={guelph} alt="UniversityOfGuelphLogo" />
                             </Grid>
                             {width > 900 && (
@@ -142,7 +142,7 @@ export default function Education({ data }) {
 
 
                     <>
-                        <Grid item xs={12} sx={{marginTop: width > 800 ? ("1%") : ("3%")}}>
+                        <Grid item xs={12} sx={{marginTop: width > 800 ? ("2%") : ("4%")}}>
                             <Grid container>
                                 <Grid item xs={skillsOuterLength(width)} />
                                 {width > 1000 && (createArray(["HTML", "CSS", "JavaScript", "React", "Gatsby", "GraphQL"])).map((instance, ID) => {
