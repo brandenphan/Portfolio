@@ -35,98 +35,106 @@ export default function Index({ data }) {
                 <NavBar />
 
                 <Grid container>
-                    {height > 600 && (<Grid item xs={firstGridLength(width)} />)}
-                    <Grid item xs={mainGridLength(width, height)} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <div style={{padding: "10%", marginTop: margin(width, height) }}>
-                            {width > 1000 && (
-                                <>
-                                    <Typography align="center" variant={nameSize(width, height)} sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
-                                    <Typography align="center" variant={jobTitleSize(width, height)} sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
-                                    <Typography align="center" variant={descriptionSize(width, height)} sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
-                                </>
-                            )}
-                            {width <= 1000 && width > 400 && (
-                                <>
-                                    {height > 500 ? (
+                    {width > 0 && (
+                        <>
+                            {height > 600 && (<Grid item xs={firstGridLength(width)} />)}
+                            <Grid item xs={mainGridLength(width, height)} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                <div style={{padding: "10%", marginTop: margin(width, height) }}>
+                                    {width > 1000 && (
                                         <>
-                                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
-                                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{name}</b></Typography>
-                                            <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>{jobTitle}</b></Typography>
-                                            <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>{description}</Typography>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
-                                            <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
-                                            <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
+                                            <Typography align="center" variant={nameSize(width, height)} sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                            <Typography align="center" variant={jobTitleSize(width, height)} sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                            <Typography align="center" variant={descriptionSize(width, height)} sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
                                         </>
                                     )}
-                                </>
-                            )}
-                            {width < 400 && (
-                                <>
-                                    <Typography align="center" variant={height > 500 ? ("h4") : ("h5")} sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
-                                    <Typography align="center" variant={height > 500 ? ("h4") : ("h5")} sx={{fontFamily: "Source Sans Pro", marginTop: height > 500 ? ("2%") : ("1%")}}><b>{name}</b></Typography>
-                                    <Typography align="center" variant={height > 500 ? ("h6") : ("subtitle1")} sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: height > 500 ? ("4%") : ("2%")}}><b>{jobTitle}</b></Typography>
-                                    <Typography align="center" variant={height > 500 ? ("h6") : ("subtitle1")} sx={{fontFamily: "Source Sans Pro", marginTop: height > 500 ? ("4%") : ("2%")}}>{description}</Typography>
-                                </>
-                            )}
-                            <Grid container justifyContent="center" spacing={2} sx={{marginTop: mainMargin(width, height)}}>
-                                <Grid item>
-                                    <Tooltip title="Github">
-                                        <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
-                                            <GitHubIcon style={{fontSize: width > 1000 ? ("35px") : ("33px"), color: "#3672FF"}} />
-                                        </StyledAnchor>
-                                    </Tooltip>
-                                </Grid>
-                                <Grid item>
-                                    <Tooltip title="LinkedIn">
-                                        <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
-                                            <LinkedInIcon style={{fontSize: width > 1000 ? ("42px") : ("40px"), color: "#3672FF"}} />
-                                        </StyledAnchor>
-                                    </Tooltip>
-                                </Grid>
-                                <Grid item>
-                                    <Tooltip title="branden.phan@gmail.com">
-                                        <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
-                                            <EmailIcon style={{fontSize: width > 1000 ? ("45px") : ("43px"), color: "#3672FF"}} />
-                                        </StyledAnchor>
-                                    </Tooltip>
-                                </Grid>
-                            </Grid>
-                        </div>
-                    </Grid>
-                    {width > 1000 && (
-                        <>
-                            <Grid item xs={imageOuterLength(width)} />
-                            <Grid item xs={imageLength(width)} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <div style={{marginTop: "-5%"}}>
-                                    <img src={profile} alt="ProfilePicture" />
+                                    {width <= 1000 && width > 400 && (
+                                        <>
+                                            {height > 500 ? (
+                                                <>
+                                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
+                                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{name}</b></Typography>
+                                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "4%"}}><b>{jobTitle}</b></Typography>
+                                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "4%"}}>{description}</Typography>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro"}}><b>{intro} {name}</b></Typography>
+                                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: "2%"}}><b>{jobTitle}</b></Typography>
+                                                    <Typography align="center" variant="h6" sx={{fontFamily: "Source Sans Pro", marginTop: "2%"}}>{description}</Typography>
+                                                </>
+                                            )}
+                                        </>
+                                    )}
+                                    {width < 400 && (
+                                        <>
+                                            <Typography align="center" variant={height > 500 ? ("h4") : ("h5")} sx={{fontFamily: "Source Sans Pro"}}><b>{intro}</b></Typography>
+                                            <Typography align="center" variant={height > 500 ? ("h4") : ("h5")} sx={{fontFamily: "Source Sans Pro", marginTop: height > 500 ? ("2%") : ("1%")}}><b>{name}</b></Typography>
+                                            <Typography align="center" variant={height > 500 ? ("h6") : ("subtitle1")} sx={{fontFamily: "Source Sans Pro", color: "#3672FF", marginTop: height > 500 ? ("4%") : ("2%")}}><b>{jobTitle}</b></Typography>
+                                            <Typography align="center" variant={height > 500 ? ("h6") : ("subtitle1")} sx={{fontFamily: "Source Sans Pro", marginTop: height > 500 ? ("4%") : ("2%")}}>{description}</Typography>
+                                        </>
+                                    )}
+                                    <Grid container justifyContent="center" spacing={2} sx={{marginTop: mainMargin(width, height)}}>
+                                        <Grid item>
+                                            <Tooltip title="Github">
+                                                <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                    <GitHubIcon style={{fontSize: width > 1000 ? ("35px") : ("33px"), color: "#3672FF"}} />
+                                                </StyledAnchor>
+                                            </Tooltip>
+                                        </Grid>
+                                        <Grid item>
+                                            <Tooltip title="LinkedIn">
+                                                <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
+                                                    <LinkedInIcon style={{fontSize: width > 1000 ? ("42px") : ("40px"), color: "#3672FF"}} />
+                                                </StyledAnchor>
+                                            </Tooltip>
+                                        </Grid>
+                                        <Grid item>
+                                            <Tooltip title="branden.phan@gmail.com">
+                                                <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                    <EmailIcon style={{fontSize: width > 1000 ? ("45px") : ("43px"), color: "#3672FF"}} />
+                                                </StyledAnchor>
+                                            </Tooltip>
+                                        </Grid>
+                                    </Grid>
                                 </div>
                             </Grid>
-                            <Grid item xs={imageAfterLength(width)} />
+                            {width > 1000 && (
+                                <>
+                                    <Grid item xs={imageOuterLength(width)} />
+                                    <Grid item xs={imageLength(width)} sx={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                        <div style={{marginTop: "-5%"}}>
+                                            <img src={profile} alt="ProfilePicture" />
+                                        </div>
+                                    </Grid>
+                                    <Grid item xs={imageAfterLength(width)} />
+                                </>
+                            )}
                         </>
                     )}
                 </Grid>
             </div>
 
             <div>
-                {height > 600 && (
-                    <div style={{height: "6vh"}} />
+                {width > 0 && (
+                    <>
+                        {height > 600 && (
+                            <div style={{height: "6vh"}} />
+                        )}
+                        {height <= 600 && height > 450 && (
+                            <div style={{height: "2vh"}} />
+                        )}
+                        <div style={{height: footerDivHeight(height)}}>
+                            <Grid container>
+                                <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                                    <div>
+                                        <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                        <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
+                                    </div>
+                                </Grid>
+                            </Grid>
+                        </div>
+                    </>
                 )}
-                {height <= 600 && height > 450 && (
-                    <div style={{height: "2vh"}} />
-                )}
-                <div style={{height: footerDivHeight(height)}}>
-                    <Grid container>
-                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                            <div>
-                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
-                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </div>
             </div>
         </Layout>
 

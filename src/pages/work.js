@@ -44,42 +44,44 @@ export default function Work({ data }) {
             <div style={{minHeight: "100vh"}}>
                 <NavBar />
                 
-                <Grid container>
-                    {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
+                {width > 0 && (
+                    <Grid container>
+                        {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
 
-                    {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
-                    <Grid item xs={lineLength(width)}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
-                    </Grid>
-                    <Grid item xs={innerLength(width)} sx={{display: "flex", justifyContent: "center"}}>
-                        <Typography variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Work</b></Typography>
-                        <br />
-                        <br />
-                        <br />
-                    </Grid>
-                    <Grid item xs={lineLength(width)}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
-                    </Grid>
-                    {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
+                        {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
+                        <Grid item xs={lineLength(width)}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={innerLength(width)} sx={{display: "flex", justifyContent: "center"}}>
+                            <Typography variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Work</b></Typography>
+                            <br />
+                            <br />
+                            <br />
+                        </Grid>
+                        <Grid item xs={lineLength(width)}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                        </Grid>
+                        {width > 1300 ? (<Grid item xs={2} />) : (<Grid item xs={1.5} />)}
 
-                    {width > 1000 ? (<Grid item xs={12}><br /><br /></Grid>) : (<Grid item xs={12}><br /></Grid>)}
-                    <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
-                    <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
+                        {width > 1000 ? (<Grid item xs={12}><br /><br /></Grid>) : (<Grid item xs={12}><br /></Grid>)}
+                        <WorkBox data={data.Lotus} width={width} open={openLotus} handleOpen={handleOpenLotus} />
+                        <WorkBox data={data.ExtremePC} width={width} open={openExtremePC} handleOpen={handleOpenExtremePC} />
 
-                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <div>
-                            {width <= 700 && width > 400 && (<><br /><br /></>)}
-                            <br />
-                            <br />
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
-                            <br />
-                            <br />
-                        </div>
+                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                            <div>
+                                {width <= 700 && width > 400 && (<><br /><br /></>)}
+                                <br />
+                                <br />
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
+                                <br />
+                                <br />
+                            </div>
+                        </Grid>
                     </Grid>
-                </Grid>
+                )}
             </div>
         </Layout>
     )

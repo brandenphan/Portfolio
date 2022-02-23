@@ -46,37 +46,59 @@ export default function Education({ data }) {
             <div>
                 <NavBar />
 
-                <Grid container>
-                    {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
+                {width > 0 && (
+                    <Grid container>
+                        {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
 
-                    
-                    <Grid item xs={outerLength("Education", width)} />
-                    <Grid item xs={lineLength("Education", width)}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
-                    </Grid>
-                    <Grid item xs={innerLength("Education", width)} sx={{display: "flex", justifyContent: "center"}}>
-                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
-                    </Grid>
-                    <Grid item xs={lineLength("Education", width)}>
-                        <br />
-                        <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
-                    </Grid>
-                    <Grid item xs={outerLength("Education", width)} />
-                    <Grid item xs={12}><br /><br /></Grid>
+                        
+                        <Grid item xs={outerLength("Education", width)} />
+                        <Grid item xs={lineLength("Education", width)}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={innerLength("Education", width)} sx={{display: "flex", justifyContent: "center"}}>
+                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
+                        </Grid>
+                        <Grid item xs={lineLength("Education", width)}>
+                            <br />
+                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={outerLength("Education", width)} />
+                        <Grid item xs={12}><br /><br /></Grid>
 
 
-                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <Grid container sx={{width: widthLength(width), padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                            <Grid item xs={imageLength(width)} sx={{display: "flex", alignItems: "center", justifyContent: width <= 660 && ("center"), marginTop: width <= 660 && ("5%")}}>
-                                <img src={guelph} alt="UniversityOfGuelphLogo" />
-                            </Grid>
-                            {width > 900 && (
-                                <>
-                                    <Grid item xs={width > 1800 ? (4) : (4.5)}>
+                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                            <Grid container sx={{width: widthLength(width), padding: "1%", border: "2px solid #d7e3fc", borderRadius: "5px", boxShadow: "0px 2px 5px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
+                                <Grid item xs={imageLength(width)} sx={{display: "flex", alignItems: "center", justifyContent: width <= 660 && ("center"), marginTop: width <= 660 && ("5%")}}>
+                                    <img src={guelph} alt="UniversityOfGuelphLogo" />
+                                </Grid>
+                                {width > 900 && (
+                                    <>
+                                        <Grid item xs={width > 1800 ? (4) : (4.5)}>
+                                            <div>
+                                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{school}</Typography>
+                                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{major}</Typography>
+                                                <ul>
+                                                    {[point1, point2, point3, point4].map((instance, ID) => (
+                                                        <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </Grid>
+                                        <Grid item xs={dateLength(width)} sx={{display: "flex", justifyContent: "flex-end"}}>
+                                            <div>
+                                                <Typography align="right" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{programDates}</Typography>
+                                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
+                                            </div>
+                                        </Grid>
+                                    </>
+                                )} 
+                                {width <= 900 && width > 660 && (
+                                    <Grid item xs={width > 750 ? (7) : (6)}>
                                         <div>
-                                            <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{school}</Typography>
-                                            <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{major}</Typography>
+                                            {[school, major, location, programDates].map((instance, ID) => (
+                                                <Typography key={ID} variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography>
+                                            ))}
                                             <ul>
                                                 {[point1, point2, point3, point4].map((instance, ID) => (
                                                     <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
@@ -84,251 +106,250 @@ export default function Education({ data }) {
                                             </ul>
                                         </div>
                                     </Grid>
-                                    <Grid item xs={dateLength(width)} sx={{display: "flex", justifyContent: "flex-end"}}>
+                                )}
+                                {width <= 660 && (
+                                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
                                         <div>
-                                            <Typography align="right" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{programDates}</Typography>
-                                            <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{location}</Typography>
+                                            <br />
+                                            {[school, major, location, programDates].map((instance, ID) => (
+                                                <Typography key={ID} align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography>
+                                            ))}
+                                            <ul>
+                                                {[point1, point2, point3, point4].map((instance, ID) => (
+                                                    <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </Grid>
-                                </>
-                            )} 
-                            {width <= 900 && width > 660 && (
-                                <Grid item xs={width > 750 ? (7) : (6)}>
-                                    <div>
-                                        {[school, major, location, programDates].map((instance, ID) => (
-                                            <Typography key={ID} variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography>
-                                        ))}
-                                        <ul>
-                                            {[point1, point2, point3, point4].map((instance, ID) => (
-                                                <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                )}
+                            </Grid>
+                        </Grid>
+
+
+                        <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
+                        <Grid item xs={outerLength("Skills", width)} />
+                        <Grid item xs={lineLength("Skills", width)}>
+                            <br />
+                            <hr style={{border: "1px solid #E60268", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={innerLength("Skills", width)} sx={{display: "flex", justifyContent: "center"}}>
+                            <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>Skills</b></Typography>
+                        </Grid>
+                        <Grid item xs={lineLength("Skills", width)}>
+                            <br />
+                            <hr style={{border: "1px solid #E60268", marginTop: "1%"}} />
+                        </Grid>
+                        <Grid item xs={outerLength("Skills", width)} />
+
+
+                        <>
+                            <Grid item xs={12} sx={{marginTop: width > 800 ? ("2%") : ("4%")}}>
+                                <Grid container>
+                                    <Grid item xs={skillsOuterLength(width)} />
+                                    {width > 1000 && (createArray(["HTML", "CSS", "JavaScript", "React", "Gatsby", "GraphQL"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 1000 && width > 800 && (createArray(["HTML", "CSS", "JavaScript", "React", "Gatsby"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 800 && width > 600 && (createArray(["HTML", "CSS", "JavaScript", "React"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 600 && (createArray(["HTML", "CSS", "JavaScript"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    <Grid item xs={skillsOuterLength(width)} />
                                 </Grid>
-                            )}
-                            {width <= 660 && (
-                                <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                                    <div>
-                                        <br />
-                                        {[school, major, location, programDates].map((instance, ID) => (
-                                            <Typography key={ID} align="center" variant="h6" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography>
-                                        ))}
-                                        <ul>
-                                            {[point1, point2, point3, point4].map((instance, ID) => (
-                                                <li key={ID}><Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>{instance}</Typography></li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </Grid>
-                            )}
-                        </Grid>
-                    </Grid>
-
-
-                    <Grid item xs={12}><br /><br /><br /><br /><br /></Grid>
-                    <Grid item xs={outerLength("Skills", width)} />
-                    <Grid item xs={lineLength("Skills", width)}>
-                        <br />
-                        <hr style={{border: "1px solid #E60268", marginTop: "1%"}} />
-                    </Grid>
-                    <Grid item xs={innerLength("Skills", width)} sx={{display: "flex", justifyContent: "center"}}>
-                        <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}}><b>Skills</b></Typography>
-                    </Grid>
-                    <Grid item xs={lineLength("Skills", width)}>
-                        <br />
-                        <hr style={{border: "1px solid #E60268", marginTop: "1%"}} />
-                    </Grid>
-                    <Grid item xs={outerLength("Skills", width)} />
-
-
-                    <>
-                        <Grid item xs={12} sx={{marginTop: width > 800 ? ("2%") : ("4%")}}>
-                            <Grid container>
-                                <Grid item xs={skillsOuterLength(width)} />
-                                {width > 1000 && (createArray(["HTML", "CSS", "JavaScript", "React", "Gatsby", "GraphQL"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 1000 && width > 800 && (createArray(["HTML", "CSS", "JavaScript", "React", "Gatsby"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 800 && width > 600 && (createArray(["HTML", "CSS", "JavaScript", "React"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 600 && (createArray(["HTML", "CSS", "JavaScript"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                <Grid item xs={skillsOuterLength(width)} />
                             </Grid>
-                        </Grid>
 
-                        <Grid item xs={12} sx={{marginTop: "2%"}}>
-                            <Grid container>
-                                <Grid item xs={skillsOuterLength(width)} />
-                                {width > 1000 && (createArray(["Node", "Express", "MySQL", "Firebase", "MongoDB", "Git"]).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                }))}
-                                {width <= 1000 && width > 800 && (createArray(["GraphQL", "Node", "Express", "MySQL", "Firebase"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 800 && width > 600 && (createArray(["Gatsby", "GraphQL", "Node", "Express"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 600 && (createArray(["React", "Gatsby", "GraphQL"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                <Grid item xs={skillsOuterLength(width)} />
-                            </Grid>
-                        </Grid>
-
-                        <Grid item xs={12} sx={{marginTop: "2%"}}>
-                            <Grid container>
-                                <Grid item xs={skillsOuterLength(width)} />
-                                {width > 1000 && (createArray(["C", "Java", "Python", "Linux", "Docker", "Mocha"]).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                }))}
-                                {width <= 1000 && width > 800 && (createArray(["MongoDB", "Git", "C", "Java", "Python"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 800 && width > 600 && (createArray(["MySQL", "Firebase", "MongoDB", "Git"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                {width <= 600 && (createArray(["Node", "Express", "MySQL"])).map((instance, ID) => {
-                                    let alt = instance.name + "Logo";
-                                    return (
-                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                        </Grid>
-                                    )
-                                })}
-                                <Grid item xs={skillsOuterLength(width)} />
-                            </Grid>
-                        </Grid>
-
-                        {width <= 1000 && (
-                        <Grid item xs={12} sx={{marginTop: "2%"}}>
-                            <Grid container>
-                                {width <= 1000 && width > 800 && (
-                                    <>
-                                        <Grid item xs={skillsOuterLength(width, true)} />
-                                        {createArray(["Linux", "Docker", "Mocha"]).map((instance, ID) => {
-                                            let alt = instance.name + "Logo";
-                                            return (
-                                                <Grid key={ID} item xs={skillsInnerLength(width, true)}>
-                                                    <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                                </Grid>
-                                            )
-                                        })}
-                                        <Grid item xs={skillsOuterLength(width, true)} />
-                                    </>
-                                )}
-                                {width <= 800 && width > 600 && (
-                                    <>
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                        {createArray(["C", "Java", "Python", "Linux"]).map((instance, ID) => {
-                                            let alt = instance.name + "Logo";
-                                            return (
-                                                <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                                    <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                                </Grid>
-                                            )
-                                        })}
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                    </>
-                                )}
-                                {width <= 600 && (
-                                    <>
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                        {createArray(["Firebase", "MongoDB", "Git"]).map((instance, ID) => {
-                                            let alt = instance.name + "Logo";
-                                            return (
-                                                <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                                    <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                                </Grid>
-                                            )
-                                        })}
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                    </>
-                                )}
-                            </Grid>
-                        </Grid>
-                        )}
-
-                        {width <= 800 && (
                             <Grid item xs={12} sx={{marginTop: "2%"}}>
                                 <Grid container>
-                                    {width <= 800 && width > 600 && (
+                                    <Grid item xs={skillsOuterLength(width)} />
+                                    {width > 1000 && (createArray(["Node", "Express", "MySQL", "Firebase", "MongoDB", "Git"]).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    }))}
+                                    {width <= 1000 && width > 800 && (createArray(["GraphQL", "Node", "Express", "MySQL", "Firebase"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 800 && width > 600 && (createArray(["Gatsby", "GraphQL", "Node", "Express"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 600 && (createArray(["React", "Gatsby", "GraphQL"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    <Grid item xs={skillsOuterLength(width)} />
+                                </Grid>
+                            </Grid>
+
+                            <Grid item xs={12} sx={{marginTop: "2%"}}>
+                                <Grid container>
+                                    <Grid item xs={skillsOuterLength(width)} />
+                                    {width > 1000 && (createArray(["C", "Java", "Python", "Linux", "Docker", "Mocha"]).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    }))}
+                                    {width <= 1000 && width > 800 && (createArray(["MongoDB", "Git", "C", "Java", "Python"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 800 && width > 600 && (createArray(["MySQL", "Firebase", "MongoDB", "Git"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    {width <= 600 && (createArray(["Node", "Express", "MySQL"])).map((instance, ID) => {
+                                        let alt = instance.name + "Logo";
+                                        return (
+                                            <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                            </Grid>
+                                        )
+                                    })}
+                                    <Grid item xs={skillsOuterLength(width)} />
+                                </Grid>
+                            </Grid>
+
+                            {width <= 1000 && (
+                            <Grid item xs={12} sx={{marginTop: "2%"}}>
+                                <Grid container>
+                                    {width <= 1000 && width > 800 && (
                                         <>
                                             <Grid item xs={skillsOuterLength(width, true)} />
-                                            {width <= 800 && width > 600 && (createArray(["Docker", "Mocha"]).map((instance, ID) => {
+                                            {createArray(["Linux", "Docker", "Mocha"]).map((instance, ID) => {
                                                 let alt = instance.name + "Logo";
                                                 return (
                                                     <Grid key={ID} item xs={skillsInnerLength(width, true)}>
                                                         <SkillComponent src={instance.image} alt={alt} name={instance.name} />
                                                     </Grid>
                                                 )
-                                            }))}
+                                            })}
                                             <Grid item xs={skillsOuterLength(width, true)} />
+                                        </>
+                                    )}
+                                    {width <= 800 && width > 600 && (
+                                        <>
+                                            <Grid item xs={skillsOuterLength(width)} />
+                                            {createArray(["C", "Java", "Python", "Linux"]).map((instance, ID) => {
+                                                let alt = instance.name + "Logo";
+                                                return (
+                                                    <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                        <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                                    </Grid>
+                                                )
+                                            })}
+                                            <Grid item xs={skillsOuterLength(width)} />
                                         </>
                                     )}
                                     {width <= 600 && (
                                         <>
                                             <Grid item xs={skillsOuterLength(width)} />
-                                            {width <= 600 && (createArray(["C", "Java", "Python"]).map((instance, ID) => {
+                                            {createArray(["Firebase", "MongoDB", "Git"]).map((instance, ID) => {
+                                                let alt = instance.name + "Logo";
+                                                return (
+                                                    <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                        <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                                    </Grid>
+                                                )
+                                            })}
+                                            <Grid item xs={skillsOuterLength(width)} />
+                                        </>
+                                    )}
+                                </Grid>
+                            </Grid>
+                            )}
+
+                            {width <= 800 && (
+                                <Grid item xs={12} sx={{marginTop: "2%"}}>
+                                    <Grid container>
+                                        {width <= 800 && width > 600 && (
+                                            <>
+                                                <Grid item xs={skillsOuterLength(width, true)} />
+                                                {width <= 800 && width > 600 && (createArray(["Docker", "Mocha"]).map((instance, ID) => {
+                                                    let alt = instance.name + "Logo";
+                                                    return (
+                                                        <Grid key={ID} item xs={skillsInnerLength(width, true)}>
+                                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                                        </Grid>
+                                                    )
+                                                }))}
+                                                <Grid item xs={skillsOuterLength(width, true)} />
+                                            </>
+                                        )}
+                                        {width <= 600 && (
+                                            <>
+                                                <Grid item xs={skillsOuterLength(width)} />
+                                                {width <= 600 && (createArray(["C", "Java", "Python"]).map((instance, ID) => {
+                                                    let alt = instance.name + "Logo";
+                                                    return (
+                                                        <Grid key={ID} item xs={skillsInnerLength(width)}>
+                                                            <SkillComponent src={instance.image} alt={alt} name={instance.name} />
+                                                        </Grid>
+                                                    )
+                                                }))}
+                                                <Grid item xs={skillsOuterLength(width)} />
+                                            </>
+                                        )}
+                                    </Grid>
+                                </Grid>
+                            )}
+
+                            {width <= 600 && (
+                                <Grid item xs={12} sx={{marginTop: "2%"}}>
+                                    <Grid container>
+                                        <>
+                                            <Grid item xs={skillsOuterLength(width)} />
+                                            {width <= 600 && (createArray(["Linux", "Docker", "Mocha"]).map((instance, ID) => {
                                                 let alt = instance.name + "Logo";
                                                 return (
                                                     <Grid key={ID} item xs={skillsInnerLength(width)}>
@@ -338,46 +359,27 @@ export default function Education({ data }) {
                                             }))}
                                             <Grid item xs={skillsOuterLength(width)} />
                                         </>
-                                    )}
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        )}
-
-                        {width <= 600 && (
-                            <Grid item xs={12} sx={{marginTop: "2%"}}>
-                                <Grid container>
-                                    <>
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                        {width <= 600 && (createArray(["Linux", "Docker", "Mocha"]).map((instance, ID) => {
-                                            let alt = instance.name + "Logo";
-                                            return (
-                                                <Grid key={ID} item xs={skillsInnerLength(width)}>
-                                                    <SkillComponent src={instance.image} alt={alt} name={instance.name} />
-                                                </Grid>
-                                            )
-                                        }))}
-                                        <Grid item xs={skillsOuterLength(width)} />
-                                    </>
-                                </Grid>
-                            </Grid>
-                        )}
-                    </>
+                            )}
+                        </>
 
 
-                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
-                            <br />
-                            <br />
-                        </div>
+                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                            <div>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
+                                <br />
+                                <br />
+                            </div>
+                        </Grid>
                     </Grid>
-                </Grid>
+                )}
             </div>
         </Layout>
     )
