@@ -7,9 +7,10 @@ import "@fontsource/source-sans-pro";
 // import lotus from "../images/lotussmall4.png";
 // import lotus2 from "../images/lotussmall5.png";
 // import test from "../images/test.png";
-import test2 from "../images/test2.png";
-import test3 from "../images/test3.png";
+import test2 from "../images/test12.png";
+import test3 from "../images/test13.png";
 import test5 from "../images/test10.png";
+import test20 from "../images/test22.png";
 // import portfolio from "../images/portfolio.png";
 // import javascript from "../images/javascript.svg";
 // import reactImage from "../images/react.svg";
@@ -47,12 +48,12 @@ export default function Projects() {
                     <Grid item xs={1.5} />
                     <Grid item xs={4} sx={{display: "flex", justifyContent: "center"}}>
                             <Grid container style={{display: "flex", alignItems: "center"}}>
-                                <Grid item xs={12} sx={{borderRadius: "5px"}}>
+                                <Grid item xs={12} sx={{borderRadius: "5px", transition: "0.2s", "&:hover": {transform: "scale(1.01)"}}}>
                                     <a href="/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
-                                        <img src={test3} alt="" height="auto" width="100%" style={{boxShadow: "0px 1px 4px 0px"}} />
+                                        <img src={test3} alt="" height="auto" width="100%" style={{boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
                                     </a>
                                 </Grid>
-                                <Grid item xs={8} sx={{marginTop: "3%"}}>
+                                <Grid item xs={8} sx={{marginTop: "3%", position: "relative"}}>
                                     <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
                                         <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}><b>Lotus Thai & Vietnamese Cuisine Web-application</b></Typography>
                                     </a>
@@ -70,7 +71,7 @@ export default function Projects() {
 
                     <Grid item xs={4} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
-                            <Grid item xs={12} sx={{borderRadius: "5px"}}>
+                            <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
                                 <img src={test2} alt="" height="auto" width="100%" style={{boxShadow: "0px 1px 4px 0px"}} />
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "3%"}}>
@@ -105,10 +106,10 @@ export default function Projects() {
                     <Grid item xs={4} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{borderRadius: "5px"}}>
-                                <img src={test3} alt="" height="auto" width="100%" style={{boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <img src={test20} alt="" height="auto" width="100%" style={{boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "3%"}}>
-                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}><b>Schedule Maker</b></Typography>
+                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}><b>Schedule Maker Web-application</b></Typography>
                             </Grid>
                             <Grid item xs={4} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
                                 <Button href="https://github.com/brandenphan/Schedule-Maker" target="_blank" variant="outlined" startIcon={<GitHub />}>
