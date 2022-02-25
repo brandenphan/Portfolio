@@ -157,6 +157,7 @@ export const query = graphql`
         }
     }
 `
+
 const footerDivHeight = (height) => {
     if (height > 600) {
         return "9vh";

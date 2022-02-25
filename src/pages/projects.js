@@ -3,13 +3,14 @@ import NavBar from "../components/NavBar"
 import Layout from "../components/Layout"
 import { Button, Grid, Typography } from "@mui/material"
 import "@fontsource/source-sans-pro";
+import { graphql } from "gatsby";
 // import schedulemaker from "../images/schedulemaker.png";
 // import lotus from "../images/lotussmall4.png";
 // import lotus2 from "../images/lotussmall5.png";
 // import test from "../images/test.png";
 import test2 from "../images/test12.png";
 import test3 from "../images/test13.png";
-import test5 from "../images/test18.png"; // test10 is the other variant
+import test5 from "../images/test19.png"; // test10 is the other variant
 import test20 from "../images/test22.png";
 import test40 from "../images/test40.png";
 import test50 from "../images/test51.png";
@@ -21,7 +22,9 @@ import test50 from "../images/test51.png";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import GitHub from "@mui/icons-material/GitHub";
 
-export default function Projects() {
+export default function Projects({ data }) {
+    const { designedBy, copyright } = data.site.siteMetadata;
+    
     return (
         <Layout>
             <div>
@@ -202,19 +205,23 @@ export default function Projects() {
 
 
 
-                    <Grid item xs={12}><br /><br /></Grid>
+                    {/* <Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /><br /></Grid> */}
 
-                    {/* <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <Grid container sx={{width: "70%", borderRadius: "5px", padding: "1%", border: "2px solid #d7e3fc", boxShadow: "0px 4px 8px 0px #C6D2EC", backgroundColor: "#d7e3fc"}}>
-                            <Grid item xs={0.2} />
-                            <Grid item xs={6}>
-                                <img src={lotus} alt="" height="100%" width="100%" style={{borderRadius: "5px"}} />
-                            </Grid>
-                        </Grid>
-                    </Grid> */}
+                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                        <div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
+                            <br />
+                            <br />
+                        </div>
+                    </Grid>
 
                     
-                    <Grid item xs={12} sx={{height: "100vh"}} />
                 </Grid>
 
             </div>
@@ -222,12 +229,13 @@ export default function Projects() {
     )
 }
 
-
-
-                                        // {/* <Grid item xs={3} sx={{display: "flex", justifyContent: "center"}}>
-                                        //     <Button sx={{color: "#3672FF", border: "2px solid #3672FF"}}>
-                                        //         <Typography variant="subtitle1">&nbsp;</Typography>
-                                        //         <GitHubIcon />
-                                        //         <Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>&nbsp;&nbsp;Code&nbsp;&nbsp;</Typography>
-                                        //     </Button>
-                                        // </Grid> */}
+export const query = graphql`
+    query ProjectsQuery {
+        site {
+            siteMetadata {
+                designedBy
+                copyright
+            }
+        }
+    }
+`
