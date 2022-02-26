@@ -51,10 +51,11 @@ export default function Projects({ data }) {
             <div>
                 <NavBar />
 
-                <Grid container>
-                    {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
-                    
-                    <Grid item xs={projectHeaderWidths(width)[0]} />
+                {width > 0 && (
+                    <Grid container>
+                        {width > 700 ? (<Grid item xs={12}><br /><br /><br /><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /><br /><br /></Grid>)}
+                        
+                        <Grid item xs={projectHeaderWidths(width)[0]} />
                         <Grid item xs={projectHeaderWidths(width)[1]}>
                             <br />
                             <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
@@ -66,125 +67,126 @@ export default function Projects({ data }) {
                             <br />
                             <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />    
                         </Grid>
-                    <Grid item xs={projectHeaderWidths(width)[0]} />    
+                        <Grid item xs={projectHeaderWidths(width)[0]} />    
 
 
-                    <Grid item xs={12}><br /><br /><br /></Grid>
+                        <Grid item xs={12}><br /><br /><br /></Grid>
 
 
-                    <Grid item xs={projectsWidths(width)[0]} />
-                    <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
-                        <Grid container style={{display: "flex", alignItems: "center"}}>
-                            <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <picture>
-                                    <source srcSet={portfolioImageWEBP} type="image/webp" />
-                                    <source srcSet={portfolioImagePNG} type="image/png" />
-                                    <img src={portfolioImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
-                                </picture>
-                            </Grid>
-                            {width > 450 ? (
-                                <>
-                                    <Grid item xs={dualButtonWidth(width)[0]} sx={{marginTop: "1%"}}>
-                                        <Typography align="left" variant="h6" sx={{fontFamily: "Source Sans Pro", transition: "0.2s", "&:hover": {color: "#E60268"}}}><b>Personal Portfolio Web-application</b></Typography>
-                                    </Grid>
-                                    <Grid item xs={dualButtonWidth(width)[1]} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
-                                        <Button href="https://github.com/brandenphan/Portfolio" target="_blank" variant="outlined" startIcon={<GitHub />}>
-                                            <Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Code</Typography>
-                                        </Button>
-                                    </Grid>
-                                    <Grid item xs={dualButtonWidth(width)[1]} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
-                                        <Button href="https://brandenphan.netlify.app/" target="_blank" variant="contained" startIcon={<ExitToAppIcon sx={{color: "white"}} />} sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#1B5FFF"}}}>
-                                            <Typography variant="subtitle1" sx={{color: "white", fontFamily: "Source Sans Pro"}}>Live</Typography>
-                                        </Button>
-                                    </Grid>
-                                </>
-                            ) : (
-                                <>
-                                    <Grid item xs={10} sx={{marginTop: "1%"}}>
-                                        <Typography align="left" variant="h6" sx={{fontFamily: "Source Sans Pro", "&:hover": {color: "#E60268"}, transition: "0.2s"}}><b>Personal Portfolio Web-application</b></Typography>
-                                    </Grid>
-                                    <Grid item xs={2} sx={{display: "flex", justifyContent: "flex-end", marginTop: "1%"}}>
-                                        <IconButton onClick={(handleClick)} aria-label="CodeLiveDropdown">
-                                            <ArrowDropDownIcon style={{color: "#3672FF", fontSize: "30px"}} />
-                                        </IconButton>
-                                    </Grid>
+                        <Grid item xs={projectsWidths(width)[0]} />
+                        <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
+                            <Grid container style={{display: "flex", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
+                                    <picture>
+                                        <source srcSet={portfolioImageWEBP} type="image/webp" />
+                                        <source srcSet={portfolioImagePNG} type="image/png" />
+                                        <img src={portfolioImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                    </picture>
+                                </Grid>
+                                {width > 450 ? (
+                                    <>
+                                        <Grid item xs={dualButtonWidth(width)[0]} sx={{marginTop: "1%"}}>
+                                            <Typography align="left" variant="h6" sx={{fontFamily: "Source Sans Pro", transition: "0.2s", "&:hover": {color: "#E60268"}}}><b>Personal Portfolio Web-application</b></Typography>
+                                        </Grid>
+                                        <Grid item xs={dualButtonWidth(width)[1]} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
+                                            <Button href="https://github.com/brandenphan/Portfolio" target="_blank" variant="outlined" startIcon={<GitHub />}>
+                                                <Typography variant="subtitle1" sx={{fontFamily: "Source Sans Pro"}}>Code</Typography>
+                                            </Button>
+                                        </Grid>
+                                        <Grid item xs={dualButtonWidth(width)[1]} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
+                                            <Button href="https://brandenphan.netlify.app/" target="_blank" variant="contained" startIcon={<ExitToAppIcon sx={{color: "white"}} />} sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#1B5FFF"}}}>
+                                                <Typography variant="subtitle1" sx={{color: "white", fontFamily: "Source Sans Pro"}}>Live</Typography>
+                                            </Button>
+                                        </Grid>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Grid item xs={10} sx={{marginTop: "1%"}}>
+                                            <Typography align="left" variant="h6" sx={{fontFamily: "Source Sans Pro", "&:hover": {color: "#E60268"}, transition: "0.2s"}}><b>Personal Portfolio Web-application</b></Typography>
+                                        </Grid>
+                                        <Grid item xs={2} sx={{display: "flex", justifyContent: "flex-end", marginTop: "1%"}}>
+                                            <IconButton onClick={(handleClick)} aria-label="CodeLiveDropdown">
+                                                <ArrowDropDownIcon style={{color: "#3672FF", fontSize: "30px"}} />
+                                            </IconButton>
+                                        </Grid>
 
-                                    <Menu anchorEl={menuElement} open={open} onClose={handleClose}>
-                                        <a href="https://github.com/brandenphan/Portfolio" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
-                                            <MenuItem>
-                                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Code&nbsp;&nbsp;&nbsp;</Typography>
-                                                <GitHub style={{color: "#3672FF", fontSize: "30px"}} />
-                                            </MenuItem>
-                                        </a>
-                                        <a href="https://brandenphan.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
-                                            <MenuItem>
-                                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Live&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
-                                                <ExitToAppIcon style={{color: "#3672FF", fontSize: "30px"}} />
-                                            </MenuItem>
-                                        </a>
-                                    </Menu>
-                                </>
-                            )}
-                        </Grid>
-                    </Grid>
-                    {width <= 1300 && (<Grid item xs={projectsWidths(width)[0]} />)}
-
-                    {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
-
-                    {width <= 1300 && (<Grid item xs={projectsWidths(width)[0]} />)}
-                    <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
-                        <Grid container style={{display: "flex", alignItems: "center"}}>
-                            <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <picture>
-                                    <source srcSet={lotusImageWEBP} type="image/webp" />
-                                    <source srcSet={lotusImagePNG} type="image/png" />
-                                    <img src={lotusImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
-                                </picture>
-                            </Grid>
-                            <Grid item xs={8} sx={{marginTop: "1%"}}>
-                                <Typography variant="h6" sx={{fontFamily: "Source Sans Pro", "&:hover": {color: "#E60268"}, transition: "0.2s"}}><b>Lotus Web-application</b></Typography>
-                            </Grid>
-                            <Grid item xs={4} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
-                                <Button href="https://lotus-restaurant.netlify.app/" target="_blank" variant="contained" startIcon={<ExitToAppIcon sx={{color: "white"}} />} sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#1B5FFF"}}}>
-                                    <Typography variant="subtitle1" sx={{color: "white", fontFamily: "Source Sans Pro"}}>Live</Typography>
-                                </Button>
+                                        <Menu anchorEl={menuElement} open={open} onClose={handleClose}>
+                                            <a href="https://github.com/brandenphan/Portfolio" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
+                                                <MenuItem>
+                                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Code&nbsp;&nbsp;&nbsp;</Typography>
+                                                    <GitHub style={{color: "#3672FF", fontSize: "30px"}} />
+                                                </MenuItem>
+                                            </a>
+                                            <a href="https://brandenphan.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
+                                                <MenuItem>
+                                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro"}}>Live&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Typography>
+                                                    <ExitToAppIcon style={{color: "#3672FF", fontSize: "30px"}} />
+                                                </MenuItem>
+                                            </a>
+                                        </Menu>
+                                    </>
+                                )}
                             </Grid>
                         </Grid>
+                        {width <= 1300 && (<Grid item xs={projectsWidths(width)[0]} />)}
+
+                        {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
+
+                        {width <= 1300 && (<Grid item xs={projectsWidths(width)[0]} />)}
+                        <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
+                            <Grid container style={{display: "flex", alignItems: "center"}}>
+                                <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
+                                    <picture>
+                                        <source srcSet={lotusImageWEBP} type="image/webp" />
+                                        <source srcSet={lotusImagePNG} type="image/png" />
+                                        <img src={lotusImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                    </picture>
+                                </Grid>
+                                <Grid item xs={8} sx={{marginTop: "1%"}}>
+                                    <Typography variant="h6" sx={{fontFamily: "Source Sans Pro", "&:hover": {color: "#E60268"}, transition: "0.2s"}}><b>Lotus Web-application</b></Typography>
+                                </Grid>
+                                <Grid item xs={4} sx={{display: "flex", justifyContent: "flex-end", alignItems: "start", marginTop: "3%"}}>
+                                    <Button href="https://lotus-restaurant.netlify.app/" target="_blank" variant="contained" startIcon={<ExitToAppIcon sx={{color: "white"}} />} sx={{backgroundColor: "#3672FF", "&:hover": {backgroundColor: "#1B5FFF"}}}>
+                                        <Typography variant="subtitle1" sx={{color: "white", fontFamily: "Source Sans Pro"}}>Live</Typography>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={projectsWidths(width)[0]} />
+
+
+                        {width > 1300 ? (<Grid item xs={12}><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
+
+                        <ProjectComponent width={width} alt="ScheduleMakerImage" imageWeb={scheduleMakerWEBP} imagePNG={scheduleMakerPNG} githubLink="https://github.com/brandenphan/Schedule-Maker" projectName="Schedule Maker Web-application" leftSide={true} />
+
+                        {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
+
+                        <ProjectComponent width={width} alt="DiscordImage" imageWeb={discordImageWEBP} imagePNG={discordImagePNG} githubLink="https://github.com/brandenphan/Pami-Bot" projectName="Discord Bot" leftSide={false} />
+
+                        {width > 1300 ? (<Grid item xs={12}><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
+
+                        <ProjectComponent width={width} alt="GPXDataViewerImage" imageWeb={gpxImageWEBP} imagePNG={gpxImagePNG} githubLink="https://github.com/brandenphan/GPX-Web-Application" projectName="GPX Data Viewer Web-application" leftSide={true} />
+
+                        {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
+
+                        <ProjectComponent width={width} alt="GPXDataViewerImage" imageWeb={eStoreImageWEBP} imagePNG={eStoreImagePNG} githubLink="https://github.com/brandenphan/Electronic-Store-Search-GUI" projectName="E-Store Search GUI" leftSide={false} />
+
+
+                        <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
+                            <div>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
+                                <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
+                                <br />
+                                <br />
+                            </div>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={projectsWidths(width)[0]} />
-
-
-                    {width > 1300 ? (<Grid item xs={12}><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
-
-                    <ProjectComponent width={width} alt="ScheduleMakerImage" imageWeb={scheduleMakerWEBP} imagePNG={scheduleMakerPNG} githubLink="https://github.com/brandenphan/Schedule-Maker" projectName="Schedule Maker Web-application" leftSide={true} />
-
-                    {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
-
-                    <ProjectComponent width={width} alt="DiscordImage" imageWeb={discordImageWEBP} imagePNG={discordImagePNG} githubLink="https://github.com/brandenphan/Pami-Bot" projectName="Discord Bot" leftSide={false} />
-
-                    {width > 1300 ? (<Grid item xs={12}><br /><br /><br /><br /><br /></Grid>) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
-
-                    <ProjectComponent width={width} alt="GPXDataViewerImage" imageWeb={gpxImageWEBP} imagePNG={gpxImagePNG} githubLink="https://github.com/brandenphan/GPX-Web-Application" projectName="GPX Data Viewer Web-application" leftSide={true} />
-
-                    {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
-
-                    <ProjectComponent width={width} alt="GPXDataViewerImage" imageWeb={eStoreImageWEBP} imagePNG={eStoreImagePNG} githubLink="https://github.com/brandenphan/Electronic-Store-Search-GUI" projectName="E-Store Search GUI" leftSide={false} />
-
-
-                    <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
-                        <div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#E60268"}} align="center">{designedBy}</Typography>
-                            <Typography variant="subtitle2" sx={{fontFamily: "Source Sans Pro", color: "#6794FF"}} align="center">{copyright}</Typography>
-                            <br />
-                            <br />
-                        </div>
-                    </Grid>
-                </Grid>
+                )}
             </div>
         </Layout>
     )

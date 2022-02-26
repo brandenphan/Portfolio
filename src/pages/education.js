@@ -52,10 +52,10 @@ export default function Education({ data }) {
 
                         
                         <Grid item xs={outerLength("Education", width)} />
-                        <Grid item xs={lineLength("Education", width)}>
-                            <br />
-                            <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
-                        </Grid>
+                            <Grid item xs={lineLength("Education", width)}>
+                                <br />
+                                <hr style={{border: "1px solid #3672FF", marginTop: "1%"}} />
+                            </Grid>
                         <Grid item xs={innerLength("Education", width)} sx={{display: "flex", justifyContent: "center"}}>
                             <Typography align="center" variant="h4" sx={{fontFamily: "Source Sans Pro", color: "#3672FF"}}><b>Education</b></Typography>
                         </Grid>

@@ -36,7 +36,7 @@ export default function NavBar() {
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
                             <div style={{marginLeft: navBarMarginBreakpoint(width)}}>
-                                <IconButton sx={{"&:hover": {color: "black"}}}>
+                                <IconButton sx={{transition: "0.3s", "&:hover": {color: "black"}}}>
                                     <LightModeIcon />
                                 </IconButton>
                             </div>
@@ -59,7 +59,7 @@ export default function NavBar() {
             )}
 
             {width <= 700 && width > 0 && (
-                <Box sx={{flexGrow: 1, position: "fixed", top: "0", left: "0", width: "100%"}}>
+                <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%"}}>
                     <AppBar position="static" sx={{ background: "transparent", boxShadow: "none" }}>
                         <Toolbar sx={{marginTop: "2%"}}>
                             <IconButton sx={{"&:hover": {color: "black"}, marginLeft: "2%"}}>
