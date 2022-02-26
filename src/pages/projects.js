@@ -4,26 +4,21 @@ import Layout from "../components/Layout"
 import { Button, Grid, IconButton, MenuItem, Typography, Menu } from "@mui/material"
 import "@fontsource/source-sans-pro";
 import { graphql } from "gatsby";
-// import schedulemaker from "../images/schedulemaker.png";
-// import lotus from "../images/lotussmall4.png";
-// import lotus2 from "../images/lotussmall5.png";
-// import test from "../images/test.png";
-import test2 from "../images/test12.png";
-import test3 from "../images/test13.png";
-import test5 from "../images/test19.png"; // test10 is the other variant
-import test20 from "../images/test22.png";
-import test40 from "../images/test40.png";
-import test50 from "../images/test51.png";
-// import portfolio from "../images/portfolio.png";
-// import javascript from "../images/javascript.svg";
-// import reactImage from "../images/react.svg";
-// import node from "../images/node.svg";
-// import GitHubIcon from '@mui/icons-material/GitHub';
+import portfolioImagePNG from "../images/portfolioImage.png";
+import lotusImagePNG from "../images/lotusImage.png";
+import discordImagePNG from "../images/discordImage.png";
+import scheduleMakerPNG from "../images/scheduleMakerImage.png";
+import gpxImagePNG from "../images/gpxImage.png";
+import eStoreImagePNG from "../images/eStoreImage.png";
+import portfolioImageWEBP from "../images/portfolioImage.webp";
+import lotusImageWEBP from "../images/lotusImage.webp";
+import discordImageWEBP from "../images/discordImage.webp";
+import scheduleMakerWEBP from "../images/scheduleMakerImage.webp";
+import gpxImageWEBP from "../images/gpxImage.webp";
+import eStoreImageWEBP from "../images/eStoreImage.webp";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import GitHub from "@mui/icons-material/GitHub";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-
 
 export default function Projects({ data }) {
     const { designedBy, copyright } = data.site.siteMetadata;
@@ -79,7 +74,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test2} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={portfolioImageWEBP} type="image/webp" />
+                                    <source srcSet={portfolioImagePNG} type="image/png" />
+                                    <img src={portfolioImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             {width > 450 ? (
                                 <>
@@ -139,7 +138,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test3} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={lotusImageWEBP} type="image/webp" />
+                                    <source srcSet={lotusImagePNG} type="image/png" />
+                                    <img src={lotusImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "1%"}}>
                                 <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
@@ -168,7 +171,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test20} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={scheduleMakerWEBP} type="image/webp" />
+                                    <source srcSet={scheduleMakerPNG} type="image/png" />
+                                    <img src={scheduleMakerPNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "1%"}}>
                                 <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
@@ -190,7 +197,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test5} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={discordImageWEBP} type="image/webp" />
+                                    <source srcSet={discordImagePNG} type="image/png" />
+                                    <img src={discordImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "1%"}}>
                                 <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
@@ -218,7 +229,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test40} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={gpxImageWEBP} type="image/webp" />
+                                    <source srcSet={gpxImagePNG} type="image/png" />
+                                    <img src={gpxImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "1%"}}>
                                 <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
@@ -240,7 +255,11 @@ export default function Projects({ data }) {
                     <Grid item xs={projectsWidths(width)[1]} sx={{display: "flex", justifyContent: "center"}}>
                         <Grid container style={{display: "flex", alignItems: "center"}}>
                             <Grid item xs={12} sx={{position: "relative", top: "0", borderRadius: "5px", transition: "0.2s", "&:hover": {top: "-5px"}}}>
-                                <img src={test50} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                <picture>
+                                    <source srcSet={eStoreImageWEBP} type="image/webp" />
+                                    <source srcSet={eStoreImagePNG} type="image/png" />
+                                    <img src={eStoreImagePNG} alt="" height="auto" width="100%" style={{borderRadius: "5px", boxShadow: "0 0px 1px 0px rgb(0 0 0 / 5%), 0 1px 4px rgb(0 0 0 / 5%), 0 10px 20px rgb(0 0 0 / 5%)"}} />
+                                </picture>
                             </Grid>
                             <Grid item xs={8} sx={{marginTop: "1%"}}>
                                 <a href="https://lotus-restaurant.netlify.app/" rel="noreferrer" target="_blank" style={{textDecoration: "none", color: "black"}}>
