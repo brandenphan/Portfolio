@@ -169,7 +169,7 @@ export default function Projects({ data }) {
 
                         {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
 
-                        <ProjectComponent width={width} alt="GPXDataViewerImage" imageWeb={eStoreImageWEBP} imagePNG={eStoreImagePNG} githubLink="https://github.com/brandenphan/Electronic-Store-Search-GUI" projectName="E-Store Search GUI" leftSide={false} />
+                        <ProjectComponent width={width} alt="EStoreSearch" imageWeb={eStoreImageWEBP} imagePNG={eStoreImagePNG} githubLink="https://github.com/brandenphan/Electronic-Store-Search-GUI" projectName="E-Store Search GUI" leftSide={false} />
 
 
                         <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
