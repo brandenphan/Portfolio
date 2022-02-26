@@ -5,7 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { graphql } from "gatsby";
-import { Grid, Typography, Tooltip, Slide, Grow } from "@mui/material";
+import { Grid, Typography, Tooltip } from "@mui/material";
 import "@fontsource/source-sans-pro";
 import styled from "styled-components";
 import profile from "../images/profile.png";
