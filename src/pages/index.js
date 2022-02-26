@@ -5,7 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { graphql } from "gatsby";
-import { Grid, Typography, Tooltip } from "@mui/material";
+import { Grid, Typography, Tooltip, Slide, Grow } from "@mui/material";
 import "@fontsource/source-sans-pro";
 import styled from "styled-components";
 import profile from "../images/profile.png";
@@ -75,25 +75,25 @@ export default function Index({ data }) {
                                     )}
                                     <Grid container justifyContent="center" spacing={2} sx={{marginTop: mainMargin(width, height)}}>
                                         <Grid item>
-                                            <Tooltip title="Github">
-                                                <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
-                                                    <GitHubIcon style={{fontSize: width > 1000 ? ("35px") : ("33px"), color: "#3672FF"}} />
-                                                </StyledAnchor>
-                                            </Tooltip>
+                                                <Tooltip title="Github">
+                                                    <StyledAnchor target="_blank" href="https://github.com/brandenphan" rel="noreferrer">
+                                                        <GitHubIcon style={{fontSize: width > 1000 ? ("35px") : ("33px"), color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
                                         </Grid>
                                         <Grid item>
-                                            <Tooltip title="LinkedIn">
-                                                <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
-                                                    <LinkedInIcon style={{fontSize: width > 1000 ? ("42px") : ("40px"), color: "#3672FF"}} />
-                                                </StyledAnchor>
-                                            </Tooltip>
+                                                <Tooltip title="LinkedIn">
+                                                    <StyledAnchor target="_blank" href="https://www.linkedin.com/in/brandenphan/" rel="noreferrer" style={{marginTop: "-4%"}}>
+                                                        <LinkedInIcon style={{fontSize: width > 1000 ? ("42px") : ("40px"), color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
                                         </Grid>
                                         <Grid item>
-                                            <Tooltip title="branden.phan@gmail.com">
-                                                <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
-                                                    <EmailIcon style={{fontSize: width > 1000 ? ("45px") : ("43px"), color: "#3672FF"}} />
-                                                </StyledAnchor>
-                                            </Tooltip>
+                                                <Tooltip title="branden.phan@gmail.com">
+                                                    <StyledAnchor target="_blank" href="mailto: branden.phan@gmail.com" rel="noreferrer" style={{marginTop: "-8%"}}>
+                                                        <EmailIcon style={{fontSize: width > 1000 ? ("45px") : ("43px"), color: "#3672FF"}} />
+                                                    </StyledAnchor>
+                                                </Tooltip>
                                         </Grid>
                                     </Grid>
                                 </div>
