@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Toolbar, AppBar, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import LightModeIcon from '@mui/icons-material/LightMode';
 import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 import "@fontsource/source-sans-pro";
@@ -36,9 +35,9 @@ export default function NavBar() {
                     <AppBar position="static" color="transparent" sx={{boxShadow: "none"}}>
                         <Toolbar>
                             <div style={{marginLeft: navBarMarginBreakpoint(width)}}>
-                                <IconButton sx={{transition: "0.3s", "&:hover": {color: "black"}}}>
-                                    <LightModeIcon />
-                                </IconButton>
+                                <Button onClick={() => {navigate("/")}} sx={{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "20px", color: "#FBC740"}}>
+                                    <b><i>BP</i></b>
+                                </Button>
                             </div>
 
                             <div style={{width: navBarWidthBreakpoint(width), display: "flex", justifyContent: "flex-end"}}>
@@ -62,9 +61,9 @@ export default function NavBar() {
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%"}}>
                     <AppBar position="static" sx={{ background: "transparent", boxShadow: "none" }}>
                         <Toolbar sx={{marginTop: "2%"}}>
-                            <IconButton sx={{"&:hover": {color: "black"}, marginLeft: "2%"}}>
-                                <LightModeIcon style={{fontSize: "35px"}} />
-                            </IconButton>
+                            <Button onClick={() => {navigate("/")}} sx={{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "20px", color: "#FBC740"}}>
+                                <b><i>BP</i></b>
+                            </Button>
                             <IconButton sx={{ position: "absolute", right: "0", marginRight: "3%"}}
                                 onClick={handleClick}
                                 aria-label="MenuButton"
@@ -142,7 +141,7 @@ const ButtonComponent = ({navigate, buttonName, onClick}) => {
                     <b>{buttonName}</b>
                 </Button>
             ) : (
-                <Button onClick={onClick} sx={[{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}]}>
+                <Button onClick={onClick} sx={{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "16px", "&:hover": {borderBottom: "2px solid", borderRadius: "0"}, color: "#3672FF"}}>
                     <b>{buttonName}</b>
                 </Button>
             )}
