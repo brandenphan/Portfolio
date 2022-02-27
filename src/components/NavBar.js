@@ -61,7 +61,7 @@ export default function NavBar() {
                 <Box sx={{flexGrow: 1, position: "absolute", top: "0", left: "0", width: "100%"}}>
                     <AppBar position="static" sx={{ background: "transparent", boxShadow: "none" }}>
                         <Toolbar sx={{marginTop: "2%"}}>
-                            <Button onClick={() => {navigate("/")}} sx={{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "20px", color: "#FBC740"}}>
+                            <Button onClick={() => {navigate("/")}} sx={{marginRight: "2%", paddingRight: "1%", paddingLeft: "1%", fontFamily: "Source Sans Pro", fontSize: "24px", color: "#FBC740"}}>
                                 <b><i>BP</i></b>
                             </Button>
                             <IconButton sx={{ position: "absolute", right: "0", marginRight: "3%"}}

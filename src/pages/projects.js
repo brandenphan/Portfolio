@@ -9,13 +9,13 @@ import lotusImagePNG from "../images/lotusImage.png";
 import discordImagePNG from "../images/discordImage.png";
 import scheduleMakerPNG from "../images/scheduleMakerImage.png";
 import gpxImagePNG from "../images/gpxImage.png";
-import eStoreImagePNG from "../images/eStoreImage.png";
+import brawlhallaPNG from "../images/brawlhallaImage.png";
 import portfolioImageWEBP from "../images/portfolioImage.webp";
 import lotusImageWEBP from "../images/lotusImage.webp";
 import discordImageWEBP from "../images/discordImage.webp";
 import scheduleMakerWEBP from "../images/scheduleMakerImage.webp";
 import gpxImageWEBP from "../images/gpxImage.webp";
-import eStoreImageWEBP from "../images/eStoreImage.webp";
+import brawlhallaWebp from "../images/brawlhallaImage.webp";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import GitHub from "@mui/icons-material/GitHub";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -169,7 +169,7 @@ export default function Projects({ data }) {
 
                         {width > 1300 ? (<Grid item xs={projectsWidths(width)[2]} />) : (<Grid item xs={12}><br /><br /><br /><br /></Grid>)}
 
-                        <ProjectComponent width={width} alt="EStoreSearch" imageWeb={eStoreImageWEBP} imagePNG={eStoreImagePNG} githubLink="https://github.com/brandenphan/Electronic-Store-Search-GUI" projectName="E-Store Search GUI" leftSide={false} />
+                        <ProjectComponent width={width} alt="BrawlhallaImage" imageWeb={brawlhallaWebp} imagePNG={brawlhallaPNG} githubLink="https://github.com/brandenphan/Brawlhalla-Website" projectName="Brawlhalla Web-application" leftSide={false} />
 
 
                         <Grid item xs={12} sx={{display: "flex", justifyContent: "center"}}>
